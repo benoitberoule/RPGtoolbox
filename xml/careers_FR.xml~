@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<careers>
+<career id="10">
+	<name>Agitateur</name>
+	<description>descritpion agitateur</description>
+	<profil>
+		<CC val="5"/>
+		<CT val="5"/>
+		<F val="0"/>
+		<E val="0"/>
+		<Ag val="5"/>
+		<Int val="10"/>
+		<FM val="0"/>
+		<Soc val="10"/>
+		<A val="0"/>
+		<B val="2"/>
+		<BF val="0"/>
+		<BE val="0"/>
+		<M val="0"/>
+		<Mag val="0"/>
+		<PF val="0"/>
+		<PD val="0"/>
+
+	</profil>
+	<skills>
+		<skill id="20"/> <!-- Charisme -->
+		<skill id="40" or="240" note2="(histoire)"/> <!-- Comérage ou Coonnaissances académiques (histoire) -->
+		<skill id="240" note1="(droit)" or="250" note2="(empire)"/> <!-- Connaissances académique (droit) et Connaissances générales (empire) -->
+		<skill id="80"/> <!-- Dissimulation -->
+		<skill id="370" note1="(bretonnien)" or="370" note2="(tiléen)"/> <!--Langue (bretonnien) et Langue (Tiléen) -->
+		<skill id="370" note1="(reikspiel)"/> <!--Langue (reikspiel) -->
+		<skill id="390"/> <!--Lire/ecrire -->
+		<skill id="170"/> <!--Perception -->
+	</skills>
+	<talents>
+		<talent id="130" or="650"/> <!--Code de la rue ou sang froid -->
+		<talent id="260"/> <!-- Eloquence -->
+		<talent id="300"/> <!-- Fuite -->
+	</talents>
+	<equipments>
+		<equipment name="Veste de cuir"/>
+		<equipment name="Vêtements confortables"/>
+		<equipment name="Tract" amount="2d10"/>
+	</equipments>
+</career>
+<career id="20">
+	<name>Apprenti sorcier</name>
+	<description>descritpion appenti sorcier</description>
+	<profil>
+		<CC val="0"/>
+		<CT val="0"/>
+		<F val="0"/>
+		<E val="0"/>
+		<Ag val="5"/>
+		<Int val="10"/>
+		<FM val="15"/>
+		<Soc val="5"/>
+		<A val="0"/>
+		<B val="2"/>
+		<BF val="0"/>
+		<BE val="0"/>
+		<M val="0"/>
+		<Mag val="1"/>
+		<PF val="0"/>
+		<PD val="0"/>
+
+	</profil>
+	<skills id="20">
+		<skill id="240" note1="(magie)"/> <!-- Connaissance académique (magie) -->
+		<skill id="330"/> <!-- Focalisation -->
+		<skill id="120"/> <!-- Fouille -->
+		<skill id="350" note1="(magick)"/> <!-- Langage mystique (magick) -->
+		<skill id="370" note1="(classique)"/> <!-- Langue (classique) -->
+		<skill id="390"/> <!-- Lire/ecrire -->
+		<skill id="170"/> <!-- Perception -->
+		<skill id="450"/> <!-- Sens de la magie -->
+	</skills>
+	<talents>
+		<talent id="340" or="460"/> <!-- Harmonie aethyrique ou Mains agiles-->
+		<talent id="370" or="570"/> <!--Intelligent ou Resistance accrue -->
+		<talent id="420"/> <!-- Magie commune (occulte)-->
+	</talents>
+	<equipments>
+		<equipment name="Bâton"/>
+		<equipment name="sac à dos"/>
+		<equipment name="Livre imprimé"/>
+	</equipments>
+</career>
+
+<!--
+
+<career>
+	<name>
+	
+	</name>
+	<description>
+	descritpion
+	</description>
+	<profil>
+		<CC val=""/>
+		<CT val=""/>
+		<F val=""/>
+		<E val=""/>
+		<Ag val=""/>
+		<Int val=""/>
+		<FM val=""/>
+		<Soc val=""/>
+		<A val=""/>
+		<B val=""/>
+		<BF val=""/>
+		<BE val=""/>
+		<M val=""/>
+		<Mag val=""/>
+		<PF val=""/>
+		<PD val=""/>
+
+	</profil>
+	<skills>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+	</skills>
+	<talents>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+	</talents>
+	<equipements>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+ 		<equipment name=""/>
+		<equipment name=""/>
+	</equipments>
+</career>
+<career>
+	<name>
+	
+	</name>
+	<description>
+	descritpion
+	</description>
+	<profil>
+		<CC val=""/>
+		<CT val=""/>
+		<F val=""/>
+		<E val=""/>
+		<Ag val=""/>
+		<Int val=""/>
+		<FM val=""/>
+		<Soc val=""/>
+		<A val=""/>
+		<B val=""/>
+		<BF val=""/>
+		<BE val=""/>
+		<M val=""/>
+		<Mag val=""/>
+		<PF val=""/>
+		<PD val=""/>
+
+	</profil>
+	<skills>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+	</skills>
+	<talents>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+	</talents>
+	<equipements>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+ 		<equipment name=""/>
+		<equipment name=""/>
+	</equipments>
+</career>
+<career>
+	<name>
+	
+	</name>
+	<description>
+	descritpion
+	</description>
+	<profil>
+		<CC val=""/>
+		<CT val=""/>
+		<F val=""/>
+		<E val=""/>
+		<Ag val=""/>
+		<Int val=""/>
+		<FM val=""/>
+		<Soc val=""/>
+		<A val=""/>
+		<B val=""/>
+		<BF val=""/>
+		<BE val=""/>
+		<M val=""/>
+		<Mag val=""/>
+		<PF val=""/>
+		<PD val=""/>
+
+	</profil>
+	<skills>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+		<skill name=""/>
+	</skills>
+	<talents>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+		<talent name=""/>
+	</talents>
+	<equipements>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+		<equipment name=""/>
+ 		<equipment name=""/>
+		<equipment name=""/>
+	</equipments>
+</career>
+
+-->
+</careers>

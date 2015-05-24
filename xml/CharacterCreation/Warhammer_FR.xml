@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<warhammer>
+	<!--Attributs de base -->
+	<name name="Nom" type="String" size="10" mandatory="true" />
+	<race name="Race" type="selectable" size="10" mandatory="false">
+		<choice val="Humain"/>
+		<choice val="Elfe"/>
+		<choice val="Nain"/>
+		<choice val="Halfeling"/>
+	</race>
+	<age name="Age" type="int" mandatory="false" />
+	<sex name="Sexe" type="selectable" size="5" mandatory="false">
+		<choice val="F"/>
+		<choice val="M"/>
+	</sex>
+	<eyesColor name="Couleur des yeux" type="String" size="15" mandatory="false"/>
+	<hairColor name="Couleur des cheveux" type="String" size="15" mandatory="false"/>
+	<weigth name="Poids" type="int" mandatory="false" />
+	<heigth name="Taille" type="int" mandatory="false" />
+	<brotherAndSisterAmount name="Nombre de freres et soeurs"  type="int" mandatory="false"/>
+	<nativeLand name="Terre natale" type="String" size="20" mandatory="false"/>
+	<astralSign name="Signe astral" type="String" size="30" mandatory="false "/>
+	<distinctSign name="Signe distinctif" type="String" size ="30" mandatory="false" />
+	<currentCareer name="Carrière actuelle" type="String" size="30" mandatory="false" />
+	<formerCareers name="Carières précédentes" type="StringList" size="30" mandatory="false" />
+	
+	<!--profils de base -->
+	<basicProfil name="Profil de base" type="table" mandatory="false">
+	<!-- Voir Jtable-->
+		<CC name="CC" type="int"/>
+		<CT name="CT" type="int"/>
+		<F name="F" type="int"/>
+		<E name="E" type="int"/>
+		<Ag name="Ag" type="int"/>
+		<Int name="Int" type="int"/>
+		<FM name="FM" type="int"/>
+		<Soc name="Soc" type="int"/>
+		<A name="A" type="int"/>
+		<B name="B" type="int"/>
+		<BF name="BF" type="int"/>
+		<BE name="BE" type="int"/>
+		<M name="M" type="int"/>
+		<Mag name="Mag" type="int"/>
+		<PF name="PF" type="int"/>
+		<PD name="PD" type="int"/>
+	</basicProfil>
+
+	<!--profil actuel -->
+	<currentProfil name="Profil actuel" type="table" mandatory="false" >
+	<!-- Voir Jtable-->
+		<CC name="CC" type="int"/>
+		<CT name="CT" type="int"/>
+		<F name="F" type="int"/>
+		<E name="E" type="int"/>
+		<Ag name="Ag" type="int"/>
+		<Int name="Int" type="int"/>
+		<FM name="FM" type="int"/>
+		<Soc name="Soc" type="int"/>
+		<A name="A" type="int"/>
+		<B name="B" type="int"/>
+		<BF name="BF" type="int"/>
+		<BE name="BE" type="int"/>
+		<M name="M" type="int"/>
+		<Mag name="Mag" type="int"/>
+		<PF name="PF" type="int"/>
+		<PD name="PD" type="int"/>
+	</currentProfil>
+
+	<!--compétences et talent -->
+	<skills name="Compétence" type="StringList" size="30" mandatory="false"/>
+	<talents name="Talents" type="StringList" size="30" mandatory="false"/>
+	<npc name="PNJ" type="checkBox" mandatory="false" />
+</warhammer>

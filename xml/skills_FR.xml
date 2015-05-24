@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<skills>
+<skill name="Canotage" car="F" basic="true" id="10">
+description
+</skill>
+<skill name="Charisme" car="Soc" basic="true" id="20">
+description
+</skill>
+<skill name="Commandement" car="Soc" basic="true" id="30">
+description
+</skill>
+<skill name="Commérage" car="Soc" basic="true"  id="40">
+descr id="10"iption
+</skill>
+<skill name="Conduite d'attelage" car="F" basic="true"  id="50">
+description
+</skill>
+<skill name="Déguisement" car="Soc" basic="true"  id="60">
+description
+</skill>
+<skill name="Déplacement silencieux" car="Ag" basic="true"  id="70">
+description
+</skill>
+<skill name="Dissimulation" car="Ag" basic="true"  id="80">
+description
+</skill>
+<skill name="Equitation" car="Ag" basic="true" id="90">
+description
+</skill>
+<skill name="Escalade" car="F" basic="true"  id="100">
+description
+</skill>
+<skill name="Evaluation" car="Int" basic="true" id="110">
+description
+</skill>
+<skill name="Fouille" car="Int" basic="true" id="120">
+description
+</skill>
+<skill name="Intimidation" car="F" basic="true" id="130">
+description
+</skill>
+<skill name="Jeu" car="Int" basic="true" id="140">
+description
+</skill>
+<skill name="Marchande" car="Soc" basic="true" id="150">
+description
+</skill>
+<skill name="Natation" car="F" basic="true" id="160">
+description
+</skill>
+<skill name="Perception" car="Int" basic="true" id="170">
+description
+</skill>
+<skill name="Resistance à l'alcool" car="E" basic="true" id="180">
+description
+</skill>
+<skill name="Soins des animaux" car="Int" basic="true" id="190">
+description
+</skill>
+<skill name="Survie" car="Int" basic="true" id="200">
+description
+</skill>
+<skill name="Alphabet secret" car="Int" basic="false" id="210">
+description
+</skill>
+<skill name="Baratin" car="Soc" basic="false" id="220">
+description
+</skill>
+<skill name="Braconnage" car="Ag" basic="false" id="230">
+description
+</skill>
+<skill name="Connaissances académiques" car="Int" basic="false" id="240">
+description
+</skill>
+<skill name="Connaissances générales" car="Int" basic="false" id="250">
+description
+</skill>
+<skill name="Crochetage" car="Ag" basic="false" id="260">
+description
+</skill>
+<skill name="Dressage" car="Soc" basic="false" id="270">
+description
+</skill>
+<skill name="Emprise sur les animaux" car="Soc" basic="false" id="280">
+description
+</skill>
+<skill name="Escamotage" car="Ag" basic="false"  id="290">
+description
+</skill>
+<skill name="Esquive" car="Ag" basic="false" id="300">
+description
+</skill>
+<skill name="Expression artistique" car="Soc" basic="false" id="310">
+description
+</skill>
+<skill name="Filature" car="Ag" basic="false" id="320">
+description
+</skill>
+<skill name="Focalisation" car="FM" basic="false" id="330">
+description
+</skill>
+<skill name="Hypnotisme" car="FM" basic="false" id="340">
+description
+</skill>
+<skill name="Langage mystique" car="Int" basic="false" id="350">
+description
+</skill>
+<skill name="Langage secret" car="Int" basic="false" id="360">
+description
+</skill>
+<skill name="Langue" car="Int" basic="false" id="370">
+description
+</skill>
+<skill name="Lecture sur les lèvres" car="Int" basic="false" id="380">
+description
+</skill>
+<skill name="Lire/écrire" car="Int" basic="false" id="390">
+description
+</skill>
+<skill name="Métier" car="" basic="false" id="400">
+description
+</skill>
+<skill name="Navigation" car="Ag" basic="false" id="410">
+description
+</skill>
+<skill name="Orientation" car="Int" basic="false" id="420">
+description
+</skill>
+<skill name="Pistage" car="Int" basic="false" id="430">
+description
+</skill>
+<skill name="Préparation de potions" car="Int" basic="false" id="440">
+description
+</skill>
+<skill name="Sens de la magie" car="FM" basic="false" id="450">
+description
+</skill>
+<skill name="Soins" car="Int" basic="false" id="460">
+description
+</skill>
+<skill name="torture" car="Soc" basic="false" id="470">
+description
+</skill>
+<skill name="Ventriloquie" car="Soc" basic="false" id="480">
+description
+</skill>
+</skills>

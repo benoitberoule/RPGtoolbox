@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<warhammer>
+	<!--Attributs de base -->
+	<name name="Nom" type="String" size="10"/>
+	<race name="Race" type="String" size="10"/>
+	<age name="Age" type="int"/>
+	<sex name="Sexe" type="selectable" size="5">
+		<choice val="F"/>
+		<choice val="M"/>
+	</sex>
+	<eyesColor name="Couleur des yeux" type="String" size="15"/>
+	<hairColor name="Couleur des cheveux" type="String" size="15"/>
+	<weigth name="Poids" type="int"/>
+	<heigth name="Taille" type="int"/>
+	<brotherAndSisterAmount name="Nombre de freres et soeurs"  type="int"/>
+	<nativeLand name="Terre natale" type="String" size="20"/>
+	<astralSign name="Signe astral" type="String" size="30"/>
+	<distinctSign name="Signe distinctif" type="String" size ="30"/>
+	<currentCareer name="Carrière actuelle" type="String" size="30"/>
+	<formerCareer name="Carières précédentes" type="StringList" size="30"/>
+	
+	<!--profils de base -->
+	<basicProfil name="Profil de base" type="table">
+	<!-- Voir Jtable-->
+		<CC name="CC" type="int"/>
+		<CT name="CT" type="int"/>
+		<F name="F" type="int"/>
+		<E name="E" type="int"/>
+		<Ag name="Ag" type="int"/>
+		<Int name="Int" type="int"/>
+		<FM name="FM" type="int"/>
+		<Soc name="Soc" type="int"/>
+		<A name="A" type="int"/>
+		<B name="B" type="int"/>
+		<BF name="BF" type="int"/>
+		<BE name="BE" type="int"/>
+		<M name="M" type="int"/>
+		<Mag name="Mag" type="int"/>
+		<PF name="PF" type="int"/>
+		<PD name="PD" type="int"/>
+	</basicProfil>
+
+	<!--profil actuel -->
+	<currentProfil name="Profil actuel" type="table">
+	<!-- Voir Jtable-->
+		<CC name="CC" type="int"/>
+		<CT name="CT" type="int"/>
+		<F name="F" type="int"/>
+		<E name="E" type="int"/>
+		<Ag name="Ag" type="int"/>
+		<Int name="Int" type="int"/>
+		<FM name="FM" type="int"/>
+		<Soc name="Soc" type="int"/>
+		<A name="A" type="int"/>
+		<B name="B" type="int"/>
+		<BF name="BF" type="int"/>
+		<BE name="BE" type="int"/>
+		<M name="M" type="int"/>
+		<Mag name="Mag" type="int"/>
+		<PF name="PF" type="int"/>
+		<PD name="PD" type="int"/>
+	</currentProfil>
+
+	<!--compétences et talent -->
+	<skills name="Compétence" type="StringList" size="30"/>
+	<talents name="Talents" type="StringList" size="30"/>
+</warhammer>

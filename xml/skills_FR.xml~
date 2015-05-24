@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<skills>
+<skill name="Canotage" car="F" basic="true">
+description
+</skill>
+<skill name="Charisme" car="Soc" basic="true">
+description
+</skill>
+<skill name="Commandement" car="Soc" basic="true">
+description
+</skill>
+<skill name="Commérage" car="Soc" basic="true">
+description
+</skill>
+<skill name="Conduite d'attelage" car="F" basic="true">
+description
+</skill>
+<skill name="Déguisement" car="Soc" basic="true">
+description
+</skill>
+<skill name="Déplacement silencieux" car="Ag" basic="true">
+description
+</skill>
+<skill name="Dissimulation" car="Ag" basic="true">
+description
+</skill>
+<skill name="Equitation" car="Ag" basic="true">
+description
+</skill>
+<skill name="Escalade" car="F" basic="true">
+description
+</skill>
+<skill name="Evaluation" car="Int" basic="true">
+description
+</skill>
+<skill name="Fouille" car="Int" basic="true">
+description
+</skill>
+<skill name="Intimidation" car="F" basic="true">
+description
+</skill>
+<skill name="Jeu" car="Int" basic="true">
+description
+</skill>
+<skill name="Marchande" car="Soc" basic="true">
+description
+</skill>
+<skill name="Natation" car="F" basic="true">
+description
+</skill>
+<skill name="Perception" car="Int" basic="true">
+description
+</skill>
+<skill name="Resistance à l'alcool" car="E" basic="true">
+description
+</skill>
+<skill name="Soins des animaux" car="Int" basic="true">
+description
+</skill>
+<skill name="Survie" car="Int" basic="true">
+description
+</skill>
+<skill name="Alphabet secret" car="Int" basic="false">
+description
+</skill>
+<skill name="Baratin" car="Soc" basic="false">
+description
+</skill>
+<skill name="Braconnage" car="Ag" basic="false">
+description
+</skill>
+<skill name="Connaissances académiques" car="Int" basic="false">
+description
+</skill>
+<skill name="Connaissances générales" car="Int" basic="false">
+description
+</skill>
+<skill name="Crochetage" car="Ag" basic="false">
+description
+</skill>
+<skill name="Dressage" car="Soc" basic="false">
+description
+</skill>
+<skill name="Emprise sur les animaux" car="Soc" basic="false">
+description
+</skill>
+<skill name="Escamotage" car="Ag" basic="false">
+description
+</skill>
+<skill name="Esquive" car="Ag" basic="false">
+description
+</skill>
+<skill name="Expression artistique" car="Soc" basic="false">
+description
+</skill>
+<skill name="Filature" car="Ag" basic="false">
+description
+</skill>
+<skill name="Focalisation" car="FM" basic="false">
+description
+</skill>
+<skill name="Hypnotisme" car="FM" basic="false">
+description
+</skill>
+<skill name="Langage mystique" car="Int" basic="false">
+description
+</skill>
+<skill name="Langage secret" car="Int" basic="false">
+description
+</skill>
+<skill name="Langue" car="Int" basic="false">
+description
+</skill>
+<skill name="Lecture sur les lèvres" car="Int" basic="false">
+description
+</skill>
+<skill name="Lire/écrire" car="Int" basic="false">
+description
+</skill>
+<skill name="Métier" car="" basic="false">
+description
+</skill>
+<skill name="Navigation" car="Ag" basic="false">
+description
+</skill>
+<skill name="Orientation" car="Int" basic="false">
+description
+</skill>
+<skill name="Pistage" car="Int" basic="false">
+description
+</skill>
+<skill name="Préparation de potions" car="Int" basic="false">
+description
+</skill>
+<skill name="Sens de la magie" car="FM" basic="false">
+description
+</skill>
+<skill name="Soins" car="Int" basic="false">
+description
+</skill>
+<skill name="torture" car="Soc" basic="false">
+description
+</skill>
+<skill name="Ventriloquie" car="Soc" basic="false">
+description
+</skill>
+</skills>

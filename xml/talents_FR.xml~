@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<talents>
+<talent name="Acrobatie équestre" id ="10">
+description
+</talent>
+<talent name="Acuité auditive" id ="20">
+description
+</talent>
+<talent name="Acuité visuelle" id ="30">
+description
+</talent>
+<talent name="Adresse au tir" id ="40">
+description
+</talent>
+<talent name="Ambidextre" id ="50">
+description
+</talent>
+<talent name="armes naturelles" id ="60">
+description
+</talent>
+<talent name="Calcul mental" id ="70">
+description
+</talent>
+<talent name="Camouflage rural" id ="80">
+description
+</talent>
+<talent name="Camouflage souterrain" id ="90">
+description
+</talent>
+<talent name="Camouflage urbain" id ="100">
+description
+</talent>
+<talent name="Chance" id ="110">
+description
+</talent>
+<talent name="Chirurgie" id ="120">
+description
+</talent>
+<talent name="Code de la rue" id ="130">
+description
+</talent>
+<talent name="Combat de rue" id ="140">
+description
+</talent>
+<talent name="Combat virevoltant" id ="150">
+description
+</talent>
+<talent name="Connaissance des pièges" id ="160">
+description
+</talent>
+<talent name="Contorsioniste" id ="170">
+description
+</talent>
+<talent name="Coups assommants" id ="180">
+description
+</talent>
+<talent name="Coups précis" id ="190">
+description
+</talent>
+<talent name="Coups puissant" id ="200">
+description
+</talent>
+<talent name="Course à pied" id ="210">
+description
+</talent>
+<talent name="Désarmement" id ="220">
+description
+</talent>
+<talent name="Dur à cuire" id ="230">
+description
+</talent>
+<talent name="Dur en affaires" id ="240">
+description
+</talent>
+<talent name="Effrayant" id ="250">
+description
+</talent>
+<talent name="Eloquence" id ="260">
+description
+</talent>
+<talent name="Etiquette" id ="270">
+description
+</talent>
+<talent name="Force accrue" id ="280">
+description
+</talent>
+<talent name="Frénésie" id ="290">
+description
+</talent>
+<talent name="Fuite" id ="300">
+description
+</talent>
+<talent name="Fureur vengeresse" id ="310">
+description
+</talent>
+<talent name="Grand voyageur" id ="320">
+description
+</talent>
+<talent name="Guerrier né" id ="330">
+description
+</talent>
+<talent name="Harmonie aethyrique" id ="340">
+description
+</talent>
+<talent name="Imitation" id ="350">
+description
+</talent>
+<talent name="Incantation de baitaille" id ="350">
+description
+</talent>
+<talent name="Inspiration divine" id ="360">
+description
+</talent>
+<talent name="Intelligent" id ="370">
+description
+</talent>
+<talent name="Intrigant" id ="380">
+description
+</talent>
+<talent name="Lévitation" id ="390">
+description
+</talent>
+<talent name="Linguistique" id ="400">
+description
+</talent>
+<talent name="Lutte" id ="410">
+description
+</talent>
+<talent name="Magie commune" id ="420">
+description
+</talent>
+<talent name="Magie mineur" id ="430">
+description
+</talent>
+<talent name="Magie noire" id ="440">
+description
+</talent>
+<talent name="Magie vulgaire" id ="450">
+description
+</talent>
+<talent name="Mains agiles" id ="460">
+description
+</talent>
+<talent name="Maître artilleur" id ="470">
+description
+</talent>
+<talent name="Maitrise" id ="480">
+description
+</talent>
+<talent name="Méditation" id ="490">
+description
+</talent>
+<talent name="Menaçant" id ="500">
+description
+</talent>
+<talent name="Mort-vivant" id ="510">
+description
+</talent>
+<talent name="Orateur né" id ="520">
+description
+</talent>
+<talent name="Parade éclair" id ="530">
+description
+</talent>
+<talent name="Projectile puissant" id ="540">
+description
+</talent>
+<talent name="Rechargement rapide" id ="550">
+description
+</talent>
+<talent name="Réflexe éclair" id ="560">
+description
+</talent>
+<talent name="Résistance accrue" id ="570">
+description
+</talent>
+<talent name="Résistance à la magie" id ="580">
+description
+</talent>
+<talent name="Résistance à la magie" id ="590">
+description
+</talent>
+<talent name="Résistance au Chaos" id ="600">
+description
+</talent>
+<talent name="Résistance aux maladies" id ="610">
+description
+</talent>
+<talent name="Résistance aux poisons" id ="620">
+description
+</talent>
+<talent name="Robuste" id ="630">
+description
+</talent>
+<talent name="Sain d'esprit" id ="640">
+description
+</talent>
+<talent name="Sang-froid" id ="650">
+description
+</talent>
+<talent name="Sans peur" id ="660">
+description
+</talent>
+<talent name="Savoir faire nain" id ="670">
+description
+</talent>
+<talent name="Science de la magie" id ="680">
+description
+</talent>
+<talent name="Sens aiguisés" id ="690">
+description
+</talent>
+<talent name="Sens de l'orientation" id ="700">
+description
+</talent>
+<talent name="Sixiéme sens" id ="710">
+description
+</talent>
+<talent name="Sociable" id ="720">
+description
+</talent>
+<talent name="Sombre savoir" id ="730">
+description
+</talent>
+<talent name="Sur ses gardes" id ="740">
+description
+</talent>
+<talent name="Talent artistique" id ="750">
+description
+</talent>
+<talent name="Terrifiant" id ="760">
+description
+</talent>
+<talent name="Tir de précision" id ="770">
+description
+</talent>
+<talent name="Tir en puissance" id ="780">
+description
+</talent>
+<talent name="Tireur d'élite" id ="790">
+description
+</talent>
+<talent name="Troublant" id ="800">
+description
+</talent>
+<talent name="Valeureux" id ="810">
+description
+</talent>
+<talent name="Vision nocturne" id ="820">
+description
+</talent>
+<talent name="Vol" id ="830">
+description
+</talent>
+</talents>
