@@ -229,7 +229,7 @@ public class CharacterCreationFrame extends JFrame {
 							,((CharacterCreationFrame) ((CharacterCreationFrameButton)e.getSource()).originalFrame).module);
 					cccf.setVisible(true);
 				}else{
-					String warningMandatoryString = "Les attributs suivants sont obligatoire: \n";
+					String warningMandatoryString = "Les attributs suivants sont obligatoires: \n";
 					
 					for(int i = 0 ; i < mandatoryCharacterAttributeComponentTable.size(); ++i)
 					{
