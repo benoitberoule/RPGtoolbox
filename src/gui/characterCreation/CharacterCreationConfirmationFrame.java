@@ -143,7 +143,7 @@ public class CharacterCreationConfirmationFrame extends JFrame{
 		/*validation button*/
 		FrameButton OkButton = new FrameButton("Valider",this);
 		OkButton.setBounds(getWidth() - OkButton.getPreferredSize().width - 15,
-							getHeight() - OkButton.getPreferredSize().height - 15,
+							getHeight() - OkButton.getPreferredSize().height*2 - 15,
 							OkButton.getPreferredSize().width,
 							OkButton.getPreferredSize().height);
 		
@@ -152,7 +152,7 @@ public class CharacterCreationConfirmationFrame extends JFrame{
 		/*cancelButton*/
 		FrameButton cancelButton = new FrameButton("Retour",this);
 		cancelButton.setBounds(getWidth() - cancelButton.getPreferredSize().width - 30 - OkButton.getPreferredSize().width,
-							getHeight() - cancelButton.getPreferredSize().height -15,
+							getHeight() - cancelButton.getPreferredSize().height*2 -15,
 							cancelButton.getPreferredSize().width,
 							cancelButton.getPreferredSize().height);
 		
@@ -217,7 +217,8 @@ public class CharacterCreationConfirmationFrame extends JFrame{
 					}
 					fos = new FileOutputStream(name);
 				ObjectOutputStream oos = new ObjectOutputStream(fos);
-					oos.writeObject(((FrameButton)e.getSource()).originalFrame.module.getCurrentCharacter());
+				//	oos.writeObject(((FrameButton)e.getSource()).originalFrame.module.getCurrentCharacter());
+					oos.writeObject(curCharacter);
 					oos.flush();
 					oos.close();
 					fos.close();
