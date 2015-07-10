@@ -25,8 +25,14 @@ public abstract class Character implements GUIParametrizable {
 		categories.add(category);
 	}
 	
+	
 	public CharacterCreationModule getModule()
 	{
 		return null;
+	}
+
+
+	public ArrayList<String> getCategories() {
+		return categories;
 	}
 }

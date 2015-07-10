@@ -209,8 +209,13 @@ public class CharacterCreationConfirmationFrame extends JFrame{
 				/*Serialize the character*/
 				FileOutputStream fos;
 				try {
-					fos = new FileOutputStream(curCharacter.getModule().getFilesPath()+
-												((WarhammerCharacter)curCharacter).getName());
+					String name = curCharacter.getModule().getFilesPath()+ ((WarhammerCharacter)curCharacter).getName();
+					for(String car : curCharacter.getCategories())
+					{
+						name += ";";
+						name += car;
+					}
+					fos = new FileOutputStream(name);
 				ObjectOutputStream oos = new ObjectOutputStream(fos);
 					oos.writeObject(((FrameButton)e.getSource()).originalFrame.module.getCurrentCharacter());
 					oos.flush();
