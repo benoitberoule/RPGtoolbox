@@ -229,6 +229,7 @@ public class CharacterCreationConfirmationFrame extends JFrame{
 				
 				
 				((FrameButton)e.getSource()).originalFrame.originalFrame.setEnabled(true);
+				((FrameButton)e.getSource()).originalFrame.originalFrame.dispose();
 				((FrameButton)e.getSource()).originalFrame.dispose();
 				
 			}

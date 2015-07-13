@@ -7,8 +7,13 @@
  * -name generator
  * -background generator
  * 
+ * 
  * TODO
- * -dtd*/
+ * ->Tacaisse
+ * -pemettre une generation aléatoire de perso
+ * -coder la version non générique de la GUI
+ * -faire une vrai fiche perso
+ * -vérifier que la  création de perszo est bien générique*/
 package toolBox;
 
 import gui.mainMenu.MainMenu;
