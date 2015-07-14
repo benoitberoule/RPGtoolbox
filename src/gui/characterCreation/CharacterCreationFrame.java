@@ -37,7 +37,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 
-import toolBox.CharacterCreationModule;
+
+import toolBox.characterCreation.CharacterCreationModule;
 
 public class CharacterCreationFrame extends JFrame {
 	

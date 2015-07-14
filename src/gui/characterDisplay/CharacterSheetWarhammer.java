@@ -19,7 +19,8 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	@Override
 	protected void createSheet() {
 		add(new JLabel(character.toString()));
-		setSize(getPreferredSize());
+	//	setSize(getPreferredSize().width + 30, getPreferredSize().height);
+		
 		
 	}
 

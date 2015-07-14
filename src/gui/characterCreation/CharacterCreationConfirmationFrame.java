@@ -24,7 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
-import toolBox.CharacterCreationModule;
+import toolBox.characterCreation.CharacterCreationModule;
 import warhammerCharacter.WarhammerCharacter;
 
 public class CharacterCreationConfirmationFrame extends JFrame{

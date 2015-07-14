@@ -206,7 +206,7 @@ public class CharacterDisplayFrame extends JFrame{
 						WarhammerCharacter cha = (WarhammerCharacter) ois.readObject();
 						ois.close();
 						characterSheetFrame.add(new CharacterSheetWarhammer(cha));
-						characterSheetFrame.setSize(new Dimension(characterSheetFrame.getPreferredSize().width,
+						characterSheetFrame.setSize(new Dimension(characterSheetFrame.getPreferredSize().width + 10,
 																	characterSheetFrame.getPreferredSize().height));
 						characterSheetFrame.setVisible(true);
 						

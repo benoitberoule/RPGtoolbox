@@ -20,6 +20,8 @@ import gui.mainMenu.MainMenu;
 
 import java.util.ArrayList;
 
+import toolBox.characterCreation.WarhammerCharacterCreationModule;
+
 public class ToolBox {
 
 	/*attributes*/
@@ -33,8 +35,8 @@ public class ToolBox {
 		WarhammerCharacterCreationModule wccm = new WarhammerCharacterCreationModule();
 		moduleList.add(wccm);
 		
-		GeneralCharacterDisplayModule wcdm = new GeneralCharacterDisplayModule();
-		moduleList.add(wcdm);
+		GeneralCharacterDisplayModule gcdm = new GeneralCharacterDisplayModule();
+		moduleList.add(gcdm);
 		
 		MainMenu mainMenu = new MainMenu(moduleList);
 		mainMenu.setVisible(true);

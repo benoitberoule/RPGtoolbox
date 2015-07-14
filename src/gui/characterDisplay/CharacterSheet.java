@@ -3,9 +3,10 @@
 
 package gui.characterDisplay;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public abstract class CharacterSheet extends JPanel {
+public  class CharacterSheet extends JPanel {
 	
 	/*Attributes*/
 	protected static final long serialVersionUID = 4661453764681000497L;
@@ -23,6 +24,11 @@ public abstract class CharacterSheet extends JPanel {
 	}
 	
 	/*create the concrete character sheet*/
-	protected abstract void createSheet();
+	protected  void createSheet()
+	{
+		add(new JLabel(character.toString()));
+		setSize(getPreferredSize());
+		
+	}
 
 }
