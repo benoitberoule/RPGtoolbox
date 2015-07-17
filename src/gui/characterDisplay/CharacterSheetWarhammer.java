@@ -1,6 +1,18 @@
+/*This class represent the warhammer character sheet, it sum up every character details and each of them may be directly modify*/
 package gui.characterDisplay;
 
+import java.awt.Color;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import warhammerCharacter.WarhammerCharacter;
 
@@ -9,18 +21,121 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	/*attributes*/
 	private static final long serialVersionUID = 3637174654061296591L;
 	protected WarhammerCharacter character;
+	protected JLabel sheet;
 
 	/*Methods*/
-	public CharacterSheetWarhammer(WarhammerCharacter cha) {
+	public CharacterSheetWarhammer(JFrame _originalFrame, WarhammerCharacter cha) {
+		originalframe = _originalFrame;
 		character = cha;
+		sheet = new JLabel(new ImageIcon("./RPG/Warhammer/fichePerso.png"));
 		createSheet();
 	}
 
 	@Override
 	protected void createSheet() {
-		add(new JLabel(character.toString()));
-	//	setSize(getPreferredSize().width + 30, getPreferredSize().height);
+		setLayout(null);
+
+		/*positioning the attributes*/
+		EditableLabel nameLabel = new EditableLabel(this, new JLabel(character.getName() ));
+		nameLabel.setLocation(sheet.getX()+ 85, sheet.getY()+80);
+		nameLabel.setSize(nameLabel.getPreferredSize());
+		add(nameLabel);
+
 		
+		sheet.setLocation(0, 0);
+		sheet.setSize(sheet.getPreferredSize());
+		add(sheet);
+
+	//	add(new JLabel(character.toString()));
+		setSize((int) sheet.getPreferredSize().getWidth(),(int) (sheet.getPreferredSize().getHeight()+20));
+	
+		
+		
+	}
+	
+	/*an editable label is a lablel use to display a character's attribute, if the user click on the label he can directly modidy the attribute */
+	private class EditableLabel extends JPanel implements MouseListener, KeyListener
+	{
+		/*attributes*/
+		JComponent content;
+		JPanel originalPanel;
+		
+		/*Methods*/
+		 public EditableLabel(JPanel _originalPanel , JComponent _content) {
+			 originalPanel = _originalPanel;
+			 content = _content;
+			 add(content);
+			 addMouseListener(this);		
+			 setSize(getPreferredSize());
+			 setBackground(new Color(0, 0, 0, 0));
+		}
+		
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			if(content instanceof JLabel)
+			{
+				remove(content);
+				content = new JTextField(((JLabel)content).getText());
+				 content.addKeyListener(this);
+				add(content);
+			}
+			content.setSize(content.getPreferredSize());
+			setSize(getPreferredSize());
+			content.repaint();
+			originalPanel.repaint();
+			originalframe.validate();
+			originalframe.repaint();
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			//do nothing
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			//do nothing
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			//do nothing
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			//do nothing			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			if(content instanceof JTextField && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER)
+			{
+				remove(content);
+				content = new JLabel(((JTextField)content).getText());
+				add(content);
+			}	
+			content.setSize(content.getPreferredSize());
+			setSize(getPreferredSize());
+			originalPanel.repaint();
+			originalframe.validate();
+			originalframe.repaint();
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			//do nothing			
+			
+		}
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			//do nothing			
+		}
 		
 	}
 
