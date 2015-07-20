@@ -14,6 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import warhammerCharacter.Career;
+import warhammerCharacter.Race;
 import warhammerCharacter.WarhammerCharacter;
 
 public class CharacterSheetWarhammer extends CharacterSheet {
@@ -36,10 +38,25 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		setLayout(null);
 
 		/*positioning the attributes*/
-		EditableLabel nameLabel = new EditableLabel(this, new JLabel(character.getName() ));
+		
+		/*Name*/
+		EditableLabel nameLabel = new EditableLabel("name",this, new JLabel(character.getName() ));
 		nameLabel.setLocation(sheet.getX()+ 85, sheet.getY()+80);
 		nameLabel.setSize(nameLabel.getPreferredSize());
 		add(nameLabel);
+		
+		/*Race*/
+		EditableLabel raceLabel = new EditableLabel("race",this, new JLabel(character.getRace().toString() ));
+		raceLabel.setLocation(sheet.getX()+ 85, sheet.getY()+95);
+		raceLabel.setSize(raceLabel.getPreferredSize());
+		add(raceLabel);	
+		
+		/*Current Career*/
+		EditableLabel careerLabel = new EditableLabel("currentCareer",this, new JLabel(character.getCurrentCareer().getName()));
+		careerLabel.setLocation(sheet.getX()+ 130, sheet.getY()+110);
+		careerLabel.setSize(careerLabel.getPreferredSize());
+		add(careerLabel);	
+		
 
 		
 		sheet.setLocation(0, 0);
@@ -59,9 +76,11 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		/*attributes*/
 		JComponent content;
 		JPanel originalPanel;
+		String attributeName;
 		
 		/*Methods*/
-		 public EditableLabel(JPanel _originalPanel , JComponent _content) {
+		 public EditableLabel( String _attributeName,JPanel _originalPanel , JComponent _content) {
+			 attributeName=_attributeName;
 			 originalPanel = _originalPanel;
 			 content = _content;
 			 add(content);
@@ -78,6 +97,8 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 				content = new JTextField(((JLabel)content).getText());
 				 content.addKeyListener(this);
 				add(content);
+
+				
 			}
 			content.setSize(content.getPreferredSize());
 			setSize(getPreferredSize());
@@ -118,6 +139,23 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 				remove(content);
 				content = new JLabel(((JTextField)content).getText());
 				add(content);
+				
+				
+				
+				/*register the new attribute value (with a very disgusting switch)*/
+				if(attributeName.equals("name"))
+						{
+							character.setName(((JLabel)content).getText());
+						}else if(attributeName.equals("race")){
+							
+							character.setRace(new Race(((JLabel)content).getText()));
+						}else if(attributeName.equals("currentCareer")){
+							
+							character.setCurrentCareer(new Career(((JLabel)content).getText()));
+						}
+				
+				
+				
 			}	
 			content.setSize(content.getPreferredSize());
 			setSize(getPreferredSize());
