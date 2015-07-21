@@ -57,6 +57,12 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		careerLabel.setSize(careerLabel.getPreferredSize());
 		add(careerLabel);	
 		
+		/*Age*/
+		EditableLabel ageLabel = new EditableLabel("age",this, new JLabel(Integer.toString(character.getAge()))     );
+		ageLabel.setLocation(sheet.getX()+ 80, sheet.getY()+183);
+		ageLabel.setSize(ageLabel.getPreferredSize());
+		add(ageLabel);	
+		
 
 		
 		sheet.setLocation(0, 0);
@@ -152,6 +158,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 						}else if(attributeName.equals("currentCareer")){
 							
 							character.setCurrentCareer(new Career(((JLabel)content).getText()));
+						}else if(attributeName.equals("age")){
+							
+							character.setAge(Integer.parseInt(((JLabel)content).getText()));
 						}
 				
 				
