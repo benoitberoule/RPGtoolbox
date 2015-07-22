@@ -20,8 +20,6 @@ import gui.mainMenu.MainMenu;
 
 import java.util.ArrayList;
 
-import toolBox.characterCreation.WarhammerCharacterCreationModule;
-
 public class ToolBox {
 
 	/*attributes*/

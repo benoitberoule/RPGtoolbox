@@ -3,8 +3,6 @@ package toolBox;
 
 import java.util.ArrayList;
 
-import toolBox.characterCreation.CharacterCreationModule;
-
 public abstract class Character implements GUIParametrizable {
 
 	
