@@ -66,6 +66,12 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		ageLabel.setSize(ageLabel.getPreferredSize());
 		add(ageLabel);	
 		
+		/*EyeColor*/
+		EditableLabel eyeColorLabel = new EditableLabel("eyeColor",this, new JLabel(character.getEyesColor())     );
+		eyeColorLabel.setLocation(sheet.getX()+ 133, sheet.getY()+198);
+		eyeColorLabel.setSize(eyeColorLabel.getPreferredSize());
+		add(eyeColorLabel);			
+		
 
 		
 		sheet.setLocation(0, 0);
@@ -164,6 +170,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 						}else if(attributeName.equals("age")){
 							
 							character.setAge(Integer.parseInt(((JLabel)content).getText()));
+						}else if(attributeName.equals("eyeColor")){
+							
+							character.setEyesColor(((JLabel)content).getText());
 						}
 				
 				
