@@ -2,6 +2,7 @@
 package gui.characterDisplay;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -29,7 +30,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	public CharacterSheetWarhammer(JFrame _originalFrame, WarhammerCharacter cha) {
 		originalframe = _originalFrame;
 		character = cha;
-		sheet = new JLabel(new ImageIcon("./RPG/Warhammer/fichePerso.png"));
+		ImageIcon characterSheetImage = new ImageIcon("./RPG/Warhammer/fichePerso.png");
+		sheet = new JLabel(characterSheetImage);
+		setPreferredSize(new Dimension(characterSheetImage.getIconWidth(),characterSheetImage.getIconHeight()));
 		createSheet();
 	}
 

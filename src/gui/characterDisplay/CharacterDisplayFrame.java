@@ -2,6 +2,7 @@
  * in the file RPG/Characters*/
 package gui.characterDisplay;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -206,10 +207,10 @@ public class CharacterDisplayFrame extends JFrame{
 						WarhammerCharacter cha = (WarhammerCharacter) ois.readObject();
 						ois.close();
 						CharacterSheetWarhammer csw = new CharacterSheetWarhammer(characterSheetFrame,cha);
-						JScrollPane scrollPane = new JScrollPane(csw);
-						scrollPane.setBounds(0, 0, csw.getWidth(), csw.getHeight());
+						//JScrollPane scrollPane = new JScrollPane(csw);
+						//scrollPane.setBounds(0, 0, csw.getWidth(), csw.getHeight());
 						//scrollPane.setPreferredSize(csw.getPreferredSize());
-						characterSheetFrame.add(scrollPane);
+						characterSheetFrame.add(new JScrollPane(csw),BorderLayout.CENTER);
 						characterSheetFrame.setSize(new Dimension(characterSheetFrame.getPreferredSize().width + 10,
 																	characterSheetFrame.getPreferredSize().height));
 						characterSheetFrame.setVisible(true);
