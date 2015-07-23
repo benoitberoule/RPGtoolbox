@@ -70,7 +70,13 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		EditableLabel eyeColorLabel = new EditableLabel("eyeColor",this, new JLabel(character.getEyesColor())     );
 		eyeColorLabel.setLocation(sheet.getX()+ 133, sheet.getY()+198);
 		eyeColorLabel.setSize(eyeColorLabel.getPreferredSize());
-		add(eyeColorLabel);			
+		add(eyeColorLabel);		
+		
+		/*HairColor*/
+		EditableLabel hairColorLabel = new EditableLabel("hairColor",this, new JLabel(character.getHairColor())     );
+		hairColorLabel.setLocation(sheet.getX()+ 144, sheet.getY()+213);
+		hairColorLabel.setSize(hairColorLabel.getPreferredSize());
+		add(hairColorLabel);		
 		
 
 		
@@ -173,6 +179,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 						}else if(attributeName.equals("eyeColor")){
 							
 							character.setEyesColor(((JLabel)content).getText());
+						}else if(attributeName.equals("hairColor")){
+							
+							character.setHairColor(((JLabel)content).getText());
 						}
 				
 				
