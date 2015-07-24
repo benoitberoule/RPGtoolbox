@@ -74,9 +74,15 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		
 		/*HairColor*/
 		EditableLabel hairColorLabel = new EditableLabel("hairColor",this, new JLabel(character.getHairColor())     );
-		hairColorLabel.setLocation(sheet.getX()+ 144, sheet.getY()+213);
+		hairColorLabel.setLocation(sheet.getX()+ 145, sheet.getY()+213);
 		hairColorLabel.setSize(hairColorLabel.getPreferredSize());
 		add(hairColorLabel);		
+		
+		/*AstralSign*/
+		EditableLabel astralSignLabel = new EditableLabel("astralSign",this, new JLabel(character.getAstralSign())     );
+		astralSignLabel.setLocation(sheet.getX()+ 105, sheet.getY()+228);
+		astralSignLabel.setSize(astralSignLabel.getPreferredSize());
+		add(astralSignLabel);		
 		
 
 		
@@ -180,6 +186,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 							
 							character.setEyesColor(((JLabel)content).getText());
 						}else if(attributeName.equals("hairColor")){
+							
+							character.setHairColor(((JLabel)content).getText());
+						}else if(attributeName.equals("astralSign")){
 							
 							character.setHairColor(((JLabel)content).getText());
 						}
