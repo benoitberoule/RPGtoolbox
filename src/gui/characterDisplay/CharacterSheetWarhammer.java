@@ -95,7 +95,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		
 		/*Height*/
 		EditableLabel heightLabel = new EditableLabel("height",this, new JLabel(String.valueOf(character.getHeigth()))     );
-		heightLabel.setLocation(sheet.getX()+ 240, sheet.getY()+198);
+		heightLabel.setLocation(sheet.getX()+ 242, sheet.getY()+198);
 		heightLabel.setSize(heightLabel.getPreferredSize());
 		add(heightLabel);		
 		
@@ -151,9 +151,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 					   String temp = ((JTextField)content).getText();
 					   content = new JFormattedTextField(formatter);
 					   ((JFormattedTextField)content).setText(temp);
-					    ((JFormattedTextField)content).setColumns(5);
-					    content.addKeyListener(this);
-					    add(content);
+					   ((JFormattedTextField)content).setColumns(5);
+					   content.addKeyListener(this);
+					   add(content);
 					}
 				
 			}
@@ -191,13 +191,22 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 
 		@Override
 		public void keyPressed(KeyEvent e) {
-			if((content instanceof JTextField || content instanceof JFormattedTextField ) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER)
+			if((content instanceof JTextField  && !(content instanceof JFormattedTextField) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER) || ( content instanceof JFormattedTextField && ((JFormattedTextField)content).isEditValid() && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER ))
 			{
 				remove(content);
-				content = new JLabel(((JTextField)content).getText());
+				
+				if (content instanceof JFormattedTextField )
+				{
+			
+					content = new JLabel(   (((JFormattedTextField)content).getValue()).toString()  );
+					
+				}else if(content instanceof JTextField )
+				{
+					content = new JLabel(((JTextField)content).getText());
+					
+				}
 				add(content);
-				
-				
+
 				
 				/*register the new attribute value (with a very disgusting switch)*/
 				if(attributeName.equals("name"))
@@ -231,7 +240,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 							//character.setAstralSign(((JLabel)content).getText());
 							/*TODO 
 							 * 
-							 * soucis ici
+							 * soucis ici 
 							 */
 						}
 				
