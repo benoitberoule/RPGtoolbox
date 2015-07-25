@@ -20,10 +20,10 @@ public class Field extends AbstractCategory {
 	 * 		Future value of val_int.
 	 */
 	public Field(String name, int val){
-		this.name = new String(val_str);
+		this.name = new String(name);
 		this.val_int = val;
+		System.out.println("Build " + this.name + " | Integer val : " + this.val_int);
 	}
-	
 	/**
 	 * String field builder.
 	 * @param name
@@ -34,10 +34,10 @@ public class Field extends AbstractCategory {
 	public Field(String name, String val){
 		this.name = new String(name);
 		this.val_str = new String(val);
+		System.out.println("Build " + this.name + " | String val : " + this.val_str);
 	}
 	
 	//Getter & setter
-	
 	/**
 	 * Get val_str.
 	 * @return val_str
@@ -46,7 +46,6 @@ public class Field extends AbstractCategory {
 	public String getStr(){
 		return this.val_str;
 	}
-	
 	/**
 	 * Set val_str value.
 	 * @param val
@@ -55,7 +54,6 @@ public class Field extends AbstractCategory {
 	public void setStr(String val){
 		this.val_str = val;
 	}
-	
 	/**
 	 * Get val_int.
 	 * @return val_int
@@ -64,7 +62,6 @@ public class Field extends AbstractCategory {
 	public int getInt(){
 		return this.val_int;
 	}
-	
 	/**
 	 * Set val_int.
 	 * @param val
@@ -78,7 +75,7 @@ public class Field extends AbstractCategory {
 	public String toString(){
 		String str = new String("<html><br>Name : ");
 		str += this.name;
-		if(val_str.isEmpty()){
+		if(val_str == null){
 			str += "<br>Integer : " + val_int + "<br></html>";
 		}
 		else {
