@@ -22,8 +22,10 @@ public class Category extends AbstractCategory{
 	 */
 	private int find(String name){
 		int index = 0;
-		while(index < content.size()){
-			if (content.get(index).name == name) return index;
+		while(index < this.content.size()){
+			if (this.content.get(index).name.compareTo(name) == 0){
+				return index;
+			}
 			++index;
 		}
 		return -1;
@@ -38,8 +40,9 @@ public class Category extends AbstractCategory{
 	public Category(String name){
 		this.name = new String(name);
 		this.content = new ArrayList<AbstractCategory>();
+		
+		System.out.println("Build " + this.name);
 	}
-
 	/**
 	 * Build a Category with a Name and an ArrayList of AbstractCategory.
 	 * @param name
@@ -50,6 +53,8 @@ public class Category extends AbstractCategory{
 	public Category(String name, ArrayList<AbstractCategory> val){
 		this.name = new String(name);
 		this.content = new ArrayList<AbstractCategory>(val);
+		
+		System.out.println("Build " + this.name + "Content : " + content);
 	}
 	/**
 	 * Build a Category with its and its contents.
@@ -65,6 +70,8 @@ public class Category extends AbstractCategory{
 		for(AbstractCategory it : elts){
 			this.content.add(it);
 		}
+		
+		System.out.println("Name : " + this.name + " Content : " + content);
 	}
 	
 	//Getter & Setters
@@ -110,8 +117,22 @@ public class Category extends AbstractCategory{
 	 * 		true if succeed. false if not.
 	 */
 	public boolean deleteElement(String name){
-		if (content.remove(find(name)) != null) return true;
+		int index = find(name);
+		if (index != -1){
+			this.content.remove(index);
+			return true;
+		}
 		else return false;
+	}
+
+	
+	//Misc
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Category [content=" + content + ", name=" + name + "]";
 	}
 	
 }

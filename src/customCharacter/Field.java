@@ -22,7 +22,6 @@ public class Field extends AbstractCategory {
 	public Field(String name, int val){
 		this.name = new String(name);
 		this.val_int = val;
-		System.out.println("Build " + this.name + " | Integer val : " + this.val_int);
 	}
 	/**
 	 * String field builder.
@@ -34,7 +33,6 @@ public class Field extends AbstractCategory {
 	public Field(String name, String val){
 		this.name = new String(name);
 		this.val_str = new String(val);
-		System.out.println("Build " + this.name + " | String val : " + this.val_str);
 	}
 	
 	//Getter & setter
