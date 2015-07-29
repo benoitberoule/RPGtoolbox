@@ -99,6 +99,31 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		heightLabel.setSize(heightLabel.getPreferredSize());
 		add(heightLabel);		
 		
+		
+		/*Weight*/
+		EditableLabel weightLabel = new EditableLabel("weight",this, new JLabel(String.valueOf(character.getWeigth()))     );
+		weightLabel.setLocation(sheet.getX()+ 242, sheet.getY()+214);
+		weightLabel.setSize(weightLabel.getPreferredSize());
+		add(weightLabel);			
+		
+		/*Brother and sister*/
+		EditableLabel broAndSisLabel = new EditableLabel("broAndSis",this, new JLabel(String.valueOf(character.getBrotherAndSisterAmount()))     );
+		broAndSisLabel.setLocation(sheet.getX()+ 322, sheet.getY()+229);
+		broAndSisLabel.setSize(broAndSisLabel.getPreferredSize());
+		add(broAndSisLabel);
+		
+		/*Native land*/
+		EditableLabel nativeLandLabel = new EditableLabel("nativeLand",this, new JLabel(String.valueOf(character.getNativeLand()))     );
+		nativeLandLabel.setLocation(sheet.getX()+ 140, sheet.getY()+245);
+		nativeLandLabel.setSize(nativeLandLabel.getPreferredSize());
+		add(nativeLandLabel);
+		
+		/*Distinct sign*/
+		EditableLabel distinctSignLabel = new EditableLabel("distinctSign",this, new JLabel(String.valueOf(character.getDistinctSign()))     );
+		distinctSignLabel.setLocation(sheet.getX()+ 140, sheet.getY()+260);
+		distinctSignLabel.setSize(distinctSignLabel.getPreferredSize());
+		add(distinctSignLabel);
+		
 		sheet.setLocation(0, 0);
 		sheet.setSize(sheet.getPreferredSize());
 		add(sheet);
@@ -138,7 +163,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 				 content.addKeyListener(this);
 				add(content);
 
-					if (attributeName.equals("height"))
+					if (attributeName.equals("height") || attributeName.equals("weight") || attributeName.equals("age") || attributeName.equals("broAndSis"))
 					{
 						NumberFormat format = NumberFormat.getInstance();
 					    NumberFormatter formatter = new NumberFormatter(format);
@@ -237,11 +262,20 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 							add(content);
 
 						}else if(attributeName.equals("height")){
-							//character.setAstralSign(((JLabel)content).getText());
-							/*TODO 
-							 * 
-							 * soucis ici 
-							 */
+							character.setHeigth(Integer.parseInt(((JLabel)content).getText()));
+							
+						}else if(attributeName.equals("weight")){
+							character.setWeigth(Integer.parseInt(((JLabel)content).getText()));
+	
+						}else if(attributeName.equals("broAndSis")){
+							character.setBrotherAndSisterAmount(Integer.parseInt(((JLabel)content).getText()));
+							
+						}else if(attributeName.equals("nativeLand")){
+							character.setNativeLand(((JLabel)content).getText());
+							
+						}else if(attributeName.equals("distinctSign")){
+							character.setNativeLand(((JLabel)content).getText());
+							
 						}
 				
 				
