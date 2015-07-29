@@ -2,17 +2,21 @@
 package gui.characterDisplay;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.text.NumberFormat;
 
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.text.NumberFormatter;
 
 import warhammerCharacter.Career;
 import warhammerCharacter.Race;
@@ -29,7 +33,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	public CharacterSheetWarhammer(JFrame _originalFrame, WarhammerCharacter cha) {
 		originalframe = _originalFrame;
 		character = cha;
-		sheet = new JLabel(new ImageIcon("./RPG/Warhammer/fichePerso.png"));
+		ImageIcon characterSheetImage = new ImageIcon("./RPG/Warhammer/fichePerso.png");
+		sheet = new JLabel(characterSheetImage);
+		setPreferredSize(new Dimension(characterSheetImage.getIconWidth(),characterSheetImage.getIconHeight()));
 		createSheet();
 	}
 
@@ -63,7 +69,35 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		ageLabel.setSize(ageLabel.getPreferredSize());
 		add(ageLabel);	
 		
-
+		/*EyeColor*/
+		EditableLabel eyeColorLabel = new EditableLabel("eyeColor",this, new JLabel(character.getEyesColor())     );
+		eyeColorLabel.setLocation(sheet.getX()+ 133, sheet.getY()+198);
+		eyeColorLabel.setSize(eyeColorLabel.getPreferredSize());
+		add(eyeColorLabel);		
+		
+		/*HairColor*/
+		EditableLabel hairColorLabel = new EditableLabel("hairColor",this, new JLabel(character.getHairColor())     );
+		hairColorLabel.setLocation(sheet.getX()+ 145, sheet.getY()+213);
+		hairColorLabel.setSize(hairColorLabel.getPreferredSize());
+		add(hairColorLabel);		
+		
+		/*AstralSign*/
+		EditableLabel astralSignLabel = new EditableLabel("astralSign",this, new JLabel(character.getAstralSign())     );
+		astralSignLabel.setLocation(sheet.getX()+ 105, sheet.getY()+228);
+		astralSignLabel.setSize(astralSignLabel.getPreferredSize());
+		add(astralSignLabel);		
+		
+		/*Sex*/
+		EditableLabel sexLabel = new EditableLabel("sex",this, new JLabel(String.valueOf(character.getSex()))     );
+		sexLabel.setLocation(sheet.getX()+ 245, sheet.getY()+183);
+		sexLabel.setSize(sexLabel.getPreferredSize());
+		add(sexLabel);		
+		
+		/*Height*/
+		EditableLabel heightLabel = new EditableLabel("height",this, new JLabel(String.valueOf(character.getHeigth()))     );
+		heightLabel.setLocation(sheet.getX()+ 242, sheet.getY()+198);
+		heightLabel.setSize(heightLabel.getPreferredSize());
+		add(heightLabel);		
 		
 		sheet.setLocation(0, 0);
 		sheet.setSize(sheet.getPreferredSize());
@@ -104,6 +138,23 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 				 content.addKeyListener(this);
 				add(content);
 
+					if (attributeName.equals("height"))
+					{
+						NumberFormat format = NumberFormat.getInstance();
+					    NumberFormatter formatter = new NumberFormatter(format);
+					    formatter.setValueClass(Integer.class);
+					    formatter.setMinimum(0);
+					    formatter.setMaximum(Integer.MAX_VALUE);
+					    // If you want the value to be committed on each keystroke instead of focus lost
+					    formatter.setCommitsOnValidEdit(true);
+					    remove(content);
+					   String temp = ((JTextField)content).getText();
+					   content = new JFormattedTextField(formatter);
+					   ((JFormattedTextField)content).setText(temp);
+					   ((JFormattedTextField)content).setColumns(5);
+					   content.addKeyListener(this);
+					   add(content);
+					}
 				
 			}
 			content.setSize(content.getPreferredSize());
@@ -140,13 +191,22 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 
 		@Override
 		public void keyPressed(KeyEvent e) {
-			if(content instanceof JTextField && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER)
+			if((content instanceof JTextField  && !(content instanceof JFormattedTextField) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER) || ( content instanceof JFormattedTextField && ((JFormattedTextField)content).isEditValid() && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER ))
 			{
 				remove(content);
-				content = new JLabel(((JTextField)content).getText());
+				
+				if (content instanceof JFormattedTextField )
+				{
+			
+					content = new JLabel(   (((JFormattedTextField)content).getValue()).toString()  );
+					
+				}else if(content instanceof JTextField )
+				{
+					content = new JLabel(((JTextField)content).getText());
+					
+				}
 				add(content);
-				
-				
+
 				
 				/*register the new attribute value (with a very disgusting switch)*/
 				if(attributeName.equals("name"))
@@ -161,11 +221,32 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 						}else if(attributeName.equals("age")){
 							
 							character.setAge(Integer.parseInt(((JLabel)content).getText()));
+						}else if(attributeName.equals("eyeColor")){
+							
+							character.setEyesColor(((JLabel)content).getText());
+						}else if(attributeName.equals("hairColor")){
+							
+							character.setHairColor(((JLabel)content).getText());
+						}else if(attributeName.equals("astralSign")){
+							
+							character.setAstralSign(((JLabel)content).getText());
+						}else if(attributeName.equals("sex")){
+							character.setSex( (((JLabel)content).getText().charAt(0)) );
+							remove(content);
+						   content = new JLabel(String.valueOf(  ((JLabel)content).getText().charAt(0))  );
+							add(content);
+
+						}else if(attributeName.equals("height")){
+							//character.setAstralSign(((JLabel)content).getText());
+							/*TODO 
+							 * 
+							 * soucis ici 
+							 */
 						}
 				
 				
 				
-			}	
+			}
 			content.setSize(content.getPreferredSize());
 			setSize(getPreferredSize());
 			originalPanel.repaint();
