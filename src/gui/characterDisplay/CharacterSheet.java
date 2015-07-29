@@ -33,7 +33,6 @@ public  class CharacterSheet extends JPanel {
 	{
 		add(new JLabel(character.toString()));
 		setSize(getPreferredSize());
-		
 	}
 
 }
