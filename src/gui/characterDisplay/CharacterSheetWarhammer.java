@@ -124,6 +124,173 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		distinctSignLabel.setSize(distinctSignLabel.getPreferredSize());
 		add(distinctSignLabel);
 		
+		/*Basic profil*/
+		EditableLabel basic_CCLabel = new EditableLabel("basic_CC",this, new JLabel(String.valueOf(character.getBasicProfil().get("CC")))     );
+		basic_CCLabel.setLocation(sheet.getX()+ 120, sheet.getY()+350);
+		basic_CCLabel.setSize(basic_CCLabel.getPreferredSize());
+		add(basic_CCLabel);
+		
+		EditableLabel basic_CTLabel = new EditableLabel("basic_CT",this, new JLabel(String.valueOf(character.getBasicProfil().get("CT")))     );
+		basic_CTLabel.setLocation(sheet.getX()+ 151, sheet.getY()+350);
+		basic_CTLabel.setSize(basic_CTLabel.getPreferredSize());
+		add(basic_CTLabel);
+		
+		EditableLabel basic_FLabel = new EditableLabel("basic_F",this, new JLabel(String.valueOf(character.getBasicProfil().get("F")))     );
+		basic_FLabel.setLocation(sheet.getX()+ 182, sheet.getY()+350);
+		basic_FLabel.setSize(basic_FLabel.getPreferredSize());
+		add(basic_FLabel);
+		
+		EditableLabel basic_ELabel = new EditableLabel("basic_E",this, new JLabel(String.valueOf(character.getBasicProfil().get("E")))     );
+		basic_ELabel.setLocation(sheet.getX()+ 214, sheet.getY()+350);
+		basic_ELabel.setSize(basic_ELabel.getPreferredSize());
+		add(basic_ELabel);
+		
+		EditableLabel basic_AgLabel = new EditableLabel("basic_Ag",this, new JLabel(String.valueOf(character.getBasicProfil().get("Ag")))     );
+		basic_AgLabel.setLocation(sheet.getX()+ 246, sheet.getY()+350);
+		basic_AgLabel.setSize(basic_AgLabel.getPreferredSize());
+		add(basic_AgLabel);
+		
+		EditableLabel basic_IntLabel = new EditableLabel("basic_Int",this, new JLabel(String.valueOf(character.getBasicProfil().get("Int")))     );
+		basic_IntLabel.setLocation(sheet.getX()+ 278, sheet.getY()+350);
+		basic_IntLabel.setSize(basic_IntLabel.getPreferredSize());
+		add(basic_IntLabel);
+		
+		EditableLabel basic_FMLabel = new EditableLabel("basic_FM",this, new JLabel(String.valueOf(character.getBasicProfil().get("FM")))     );
+		basic_FMLabel.setLocation(sheet.getX()+ 310, sheet.getY()+350);
+		basic_FMLabel.setSize(basic_FMLabel.getPreferredSize());
+		add(basic_FMLabel);
+		
+		EditableLabel basic_SocLabel = new EditableLabel("basic_Soc",this, new JLabel(String.valueOf(character.getBasicProfil().get("Soc")))     );
+		basic_SocLabel.setLocation(sheet.getX()+ 342, sheet.getY()+350);
+		basic_SocLabel.setSize(basic_SocLabel.getPreferredSize());
+		add(basic_SocLabel);
+		
+		/*------------------*/
+		EditableLabel basic_ALabel = new EditableLabel("basic_A",this, new JLabel(String.valueOf(character.getBasicProfil().get("A")))     );
+		basic_ALabel.setLocation(sheet.getX()+ 120, sheet.getY()+437);
+		basic_ALabel.setSize(basic_ALabel.getPreferredSize());
+		add(basic_ALabel);
+		
+		EditableLabel basic_BLabel = new EditableLabel("basic_B",this, new JLabel(String.valueOf(character.getBasicProfil().get("B")))     );
+		basic_BLabel.setLocation(sheet.getX()+ 151, sheet.getY()+437);
+		basic_BLabel.setSize(basic_BLabel.getPreferredSize());
+		add(basic_BLabel);
+		
+		EditableLabel basic_BFLabel = new EditableLabel("basic_BF",this, new JLabel(String.valueOf(character.getBasicProfil().get("BF")))     );
+		basic_BFLabel.setLocation(sheet.getX()+ 182, sheet.getY()+437);
+		basic_BFLabel.setSize(basic_BFLabel.getPreferredSize());
+		add(basic_BFLabel);
+		
+		EditableLabel basic_BELabel = new EditableLabel("basic_BE",this, new JLabel(String.valueOf(character.getBasicProfil().get("BE")))     );
+		basic_BELabel.setLocation(sheet.getX()+ 214, sheet.getY()+437);
+		basic_BELabel.setSize(basic_BELabel.getPreferredSize());
+		add(basic_BELabel);
+		
+		EditableLabel basic_MLabel = new EditableLabel("basic_M",this, new JLabel(String.valueOf(character.getBasicProfil().get("M")))     );
+		basic_MLabel.setLocation(sheet.getX()+ 246, sheet.getY()+437);
+		basic_MLabel.setSize(basic_MLabel.getPreferredSize());
+		add(basic_MLabel);
+		
+		EditableLabel basic_MagLabel = new EditableLabel("basic_Mag",this, new JLabel(String.valueOf(character.getBasicProfil().get("Mag")))     );
+		basic_MagLabel.setLocation(sheet.getX()+ 278, sheet.getY()+437);
+		basic_MagLabel.setSize(basic_MagLabel.getPreferredSize());
+		add(basic_MagLabel);
+		
+		EditableLabel basic_PFLabel = new EditableLabel("basic_PF",this, new JLabel(String.valueOf(character.getBasicProfil().get("PF")))     );
+		basic_PFLabel.setLocation(sheet.getX()+ 310, sheet.getY()+437);
+		basic_PFLabel.setSize(basic_PFLabel.getPreferredSize());
+		add(basic_PFLabel);
+		
+		EditableLabel basic_PDLabel = new EditableLabel("basic_PD",this, new JLabel(String.valueOf(character.getBasicProfil().get("PD")))     );
+		basic_PDLabel.setLocation(sheet.getX()+ 342, sheet.getY()+437);
+		basic_PDLabel.setSize(basic_PDLabel.getPreferredSize());
+		add(basic_PDLabel);
+		
+		
+		/*Current profil*/
+		EditableLabel current_CCLabel = new EditableLabel("current_CC",this, new JLabel(String.valueOf(character.getCurrentProfil().get("CC")))     );
+		current_CCLabel.setLocation(sheet.getX()+ 120, sheet.getY()+385);
+		current_CCLabel.setSize(current_CCLabel.getPreferredSize());
+		add(current_CCLabel);
+		
+		EditableLabel current_CTLabel = new EditableLabel("current_CT",this, new JLabel(String.valueOf(character.getCurrentProfil().get("CT")))     );
+		current_CTLabel.setLocation(sheet.getX()+ 151, sheet.getY()+385);
+		current_CTLabel.setSize(current_CTLabel.getPreferredSize());
+		add(current_CTLabel);
+		
+		EditableLabel current_FLabel = new EditableLabel("current_F",this, new JLabel(String.valueOf(character.getCurrentProfil().get("F")))     );
+		current_FLabel.setLocation(sheet.getX()+ 182, sheet.getY()+385);
+		current_FLabel.setSize(current_FLabel.getPreferredSize());
+		add(current_FLabel);
+		
+		EditableLabel current_ELabel = new EditableLabel("current_E",this, new JLabel(String.valueOf(character.getCurrentProfil().get("E")))     );
+		current_ELabel.setLocation(sheet.getX()+ 214, sheet.getY()+385);
+		current_ELabel.setSize(current_ELabel.getPreferredSize());
+		add(current_ELabel);
+		
+		EditableLabel current_AgLabel = new EditableLabel("current_Ag",this, new JLabel(String.valueOf(character.getCurrentProfil().get("Ag")))     );
+		current_AgLabel.setLocation(sheet.getX()+ 246, sheet.getY()+385);
+		current_AgLabel.setSize(current_AgLabel.getPreferredSize());
+		add(current_AgLabel);
+		
+		EditableLabel current_IntLabel = new EditableLabel("current_Int",this, new JLabel(String.valueOf(character.getCurrentProfil().get("Int")))     );
+		current_IntLabel.setLocation(sheet.getX()+ 278, sheet.getY()+385);
+		current_IntLabel.setSize(current_IntLabel.getPreferredSize());
+		add(current_IntLabel);
+		
+		EditableLabel current_FMLabel = new EditableLabel("current_FM",this, new JLabel(String.valueOf(character.getCurrentProfil().get("FM")))     );
+		current_FMLabel.setLocation(sheet.getX()+ 310, sheet.getY()+385);
+		current_FMLabel.setSize(current_FMLabel.getPreferredSize());
+		add(current_FMLabel);
+		
+		EditableLabel current_SocLabel = new EditableLabel("current_Soc",this, new JLabel(String.valueOf(character.getCurrentProfil().get("Soc")))     );
+		current_SocLabel.setLocation(sheet.getX()+ 342, sheet.getY()+385);
+		current_SocLabel.setSize(current_SocLabel.getPreferredSize());
+		add(current_SocLabel);
+		
+		/*------------------*/
+		EditableLabel current_ALabel = new EditableLabel("current_A",this, new JLabel(String.valueOf(character.getCurrentProfil().get("A")))     );
+		current_ALabel.setLocation(sheet.getX()+ 120, sheet.getY()+470);
+		current_ALabel.setSize(current_ALabel.getPreferredSize());
+		add(current_ALabel);
+		
+		EditableLabel current_BLabel = new EditableLabel("current_B",this, new JLabel(String.valueOf(character.getCurrentProfil().get("B")))     );
+		current_BLabel.setLocation(sheet.getX()+ 151, sheet.getY()+470);
+		current_BLabel.setSize(current_BLabel.getPreferredSize());
+		add(current_BLabel);
+		
+		EditableLabel current_BFLabel = new EditableLabel("current_BF",this, new JLabel(String.valueOf(character.getCurrentProfil().get("BF")))     );
+		current_BFLabel.setLocation(sheet.getX()+ 182, sheet.getY()+470);
+		current_BFLabel.setSize(current_BFLabel.getPreferredSize());
+		add(current_BFLabel);
+		
+		EditableLabel current_BELabel = new EditableLabel("current_BE",this, new JLabel(String.valueOf(character.getCurrentProfil().get("BE")))     );
+		current_BELabel.setLocation(sheet.getX()+ 214, sheet.getY()+470);
+		current_BELabel.setSize(current_BELabel.getPreferredSize());
+		add(current_BELabel);
+		
+		EditableLabel current_MLabel = new EditableLabel("current_M",this, new JLabel(String.valueOf(character.getCurrentProfil().get("M")))     );
+		current_MLabel.setLocation(sheet.getX()+ 246, sheet.getY()+470);
+		current_MLabel.setSize(current_MLabel.getPreferredSize());
+		add(current_MLabel);
+		
+		EditableLabel current_MagLabel = new EditableLabel("current_Mag",this, new JLabel(String.valueOf(character.getCurrentProfil().get("Mag")))     );
+		current_MagLabel.setLocation(sheet.getX()+ 278, sheet.getY()+470);
+		current_MagLabel.setSize(current_MagLabel.getPreferredSize());
+		add(current_MagLabel);
+		
+		EditableLabel current_PFLabel = new EditableLabel("current_PF",this, new JLabel(String.valueOf(character.getCurrentProfil().get("PF")))     );
+		current_PFLabel.setLocation(sheet.getX()+ 310, sheet.getY()+470);
+		current_PFLabel.setSize(current_PFLabel.getPreferredSize());
+		add(current_PFLabel);
+		
+		EditableLabel current_PDLabel = new EditableLabel("current_PD",this, new JLabel(String.valueOf(character.getCurrentProfil().get("PD")))     );
+		current_PDLabel.setLocation(sheet.getX()+ 342, sheet.getY()+470);
+		current_PDLabel.setSize(current_PDLabel.getPreferredSize());
+		add(current_PDLabel);
+
+		
+		
 		sheet.setLocation(0, 0);
 		sheet.setSize(sheet.getPreferredSize());
 		add(sheet);
@@ -177,6 +344,22 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 					   content = new JFormattedTextField(formatter);
 					   ((JFormattedTextField)content).setText(temp);
 					   ((JFormattedTextField)content).setColumns(5);
+					   content.addKeyListener(this);
+					   add(content);
+					}else if (attributeName.contains("basic_") || attributeName.contains("current_"))
+					{
+						NumberFormat format = NumberFormat.getInstance();
+					    NumberFormatter formatter = new NumberFormatter(format);
+					    formatter.setValueClass(Integer.class);
+					    formatter.setMinimum(0);
+					    formatter.setMaximum(99);
+					    // If you want the value to be committed on each keystroke instead of focus lost
+					    formatter.setCommitsOnValidEdit(true);
+					    remove(content);
+					   String temp = ((JTextField)content).getText();
+					   content = new JFormattedTextField(formatter);
+					   ((JFormattedTextField)content).setText(temp);
+					   ((JFormattedTextField)content).setColumns(2);
 					   content.addKeyListener(this);
 					   add(content);
 					}
@@ -276,6 +459,9 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 						}else if(attributeName.equals("distinctSign")){
 							character.setNativeLand(((JLabel)content).getText());
 							
+						}else if(attributeName.contains("basic_") || attributeName.contains("current_")){
+							character.getBasicProfil().set(attributeName.substring(attributeName.length() - 2),
+											Integer.parseInt(((JLabel)content).getText()));
 						}
 				
 				
