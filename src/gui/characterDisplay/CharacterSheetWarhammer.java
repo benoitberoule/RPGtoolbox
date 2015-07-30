@@ -3,6 +3,8 @@ package gui.characterDisplay;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -14,6 +16,7 @@ import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.NumberFormatter;
@@ -303,7 +306,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	}
 	
 	/*an editable label is a lablel use to display a character's attribute, if the user click on the label he can directly modidy the attribute */
-	private class EditableLabel extends JPanel implements MouseListener, KeyListener
+	private class EditableLabel extends JPanel implements MouseListener, KeyListener, FocusListener
 	{
 
 		private static final long serialVersionUID = -8810040371147390711L;
@@ -311,6 +314,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		JComponent content;
 		JPanel originalPanel;
 		String attributeName;
+		JLabel formerLabel = new JLabel();;
 		
 		/*Methods*/
 		 public EditableLabel( String _attributeName,JPanel _originalPanel , JComponent _content) {
@@ -328,10 +332,13 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 			if(content instanceof JLabel)
 			{
 				remove(content);
+				formerLabel = (JLabel) content;
 				content = new JTextField(((JLabel)content).getText());
-				 content.addKeyListener(this);
+				
+				content.addKeyListener(this);
+				content.addFocusListener(this);
 				add(content);
-
+				((JTextField)content).requestFocus();
 					if (attributeName.equals("height") || attributeName.equals("weight") || attributeName.equals("age") || attributeName.equals("broAndSis"))
 					{
 						NumberFormat format = NumberFormat.getInstance();
@@ -348,6 +355,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 					   ((JFormattedTextField)content).setColumns(5);
 					   content.addKeyListener(this);
 					   add(content);
+					   ((JFormattedTextField)content).requestFocus();
 					}else if (attributeName.contains("basic_") || attributeName.contains("current_"))
 					{
 						NumberFormat format = NumberFormat.getInstance();
@@ -364,6 +372,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 					   ((JFormattedTextField)content).setColumns(2);
 					   content.addKeyListener(this);
 					   add(content);
+					   ((JFormattedTextField)content).requestFocus();
 					}
 				
 			}
@@ -403,71 +412,76 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		public void keyPressed(KeyEvent e) {
 			if((content instanceof JTextField  && !(content instanceof JFormattedTextField) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER) || ( content instanceof JFormattedTextField && ((JFormattedTextField)content).isEditValid() && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER ))
 			{
-				remove(content);
-				
-				if (content instanceof JFormattedTextField )
-				{
-			
-					content = new JLabel(   (((JFormattedTextField)content).getValue()).toString()  );
+				if(((JTextField)content).getText().equals("")){
+					JOptionPane.showMessageDialog(this, "Le champ ne peut être vide","Champs vide", JOptionPane.WARNING_MESSAGE);
+				}else{
 					
-				}else if(content instanceof JTextField )
-				{
-					content = new JLabel(((JTextField)content).getText());
 					
-				}
-				add(content);
-
+					remove(content);
+					
+					if (content instanceof JFormattedTextField )
+					{
 				
-				/*register the new attribute value (with a very disgusting switch)*/
-				if(attributeName.equals("name"))
-						{
-							character.setName(((JLabel)content).getText());
-						}else if(attributeName.equals("race")){
-							
-							character.setRace(new Race(((JLabel)content).getText()));
-						}else if(attributeName.equals("currentCareer")){
-							
-							character.setCurrentCareer(new Career(((JLabel)content).getText()));
-						}else if(attributeName.equals("age")){
-							
-							character.setAge(Integer.parseInt(((JLabel)content).getText()));
-						}else if(attributeName.equals("eyeColor")){
-							
-							character.setEyesColor(((JLabel)content).getText());
-						}else if(attributeName.equals("hairColor")){
-							
-							character.setHairColor(((JLabel)content).getText());
-						}else if(attributeName.equals("astralSign")){
-							
-							character.setAstralSign(((JLabel)content).getText());
-						}else if(attributeName.equals("sex")){
-							character.setSex( (((JLabel)content).getText().charAt(0)) );
-							remove(content);
-						   content = new JLabel(String.valueOf(  ((JLabel)content).getText().charAt(0))  );
-							add(content);
-
-						}else if(attributeName.equals("height")){
-							character.setHeigth(Integer.parseInt(((JLabel)content).getText()));
-							
-						}else if(attributeName.equals("weight")){
-							character.setWeigth(Integer.parseInt(((JLabel)content).getText()));
+						content = new JLabel(   (((JFormattedTextField)content).getValue()).toString()  );
+						
+					}else if(content instanceof JTextField )
+					{
+						content = new JLabel(((JTextField)content).getText());
+						
+					}
+					add(content);
 	
-						}else if(attributeName.equals("broAndSis")){
-							character.setBrotherAndSisterAmount(Integer.parseInt(((JLabel)content).getText()));
-							
-						}else if(attributeName.equals("nativeLand")){
-							character.setNativeLand(((JLabel)content).getText());
-							
-						}else if(attributeName.equals("distinctSign")){
-							character.setNativeLand(((JLabel)content).getText());
-							
-						}else if(attributeName.contains("basic_") || attributeName.contains("current_")){
-							character.getBasicProfil().set(attributeName.substring(attributeName.length() - 2),
-											Integer.parseInt(((JLabel)content).getText()));
-						}
-				
-				
-				
+					
+					/*register the new attribute value (with a very disgusting switch)*/
+					if(attributeName.equals("name"))
+							{
+								character.setName(((JLabel)content).getText());
+							}else if(attributeName.equals("race")){
+								
+								character.setRace(new Race(((JLabel)content).getText()));
+							}else if(attributeName.equals("currentCareer")){
+								
+								character.setCurrentCareer(new Career(((JLabel)content).getText()));
+							}else if(attributeName.equals("age")){
+								
+								character.setAge(Integer.parseInt(((JLabel)content).getText()));
+							}else if(attributeName.equals("eyeColor")){
+								
+								character.setEyesColor(((JLabel)content).getText());
+							}else if(attributeName.equals("hairColor")){
+								
+								character.setHairColor(((JLabel)content).getText());
+							}else if(attributeName.equals("astralSign")){
+								
+								character.setAstralSign(((JLabel)content).getText());
+							}else if(attributeName.equals("sex")){
+								character.setSex( (((JLabel)content).getText().charAt(0)) );
+								remove(content);
+							   content = new JLabel(String.valueOf(  ((JLabel)content).getText().charAt(0))  );
+								add(content);
+	
+							}else if(attributeName.equals("height")){
+								character.setHeigth(Integer.parseInt(((JLabel)content).getText()));
+								
+							}else if(attributeName.equals("weight")){
+								character.setWeigth(Integer.parseInt(((JLabel)content).getText()));
+		
+							}else if(attributeName.equals("broAndSis")){
+								character.setBrotherAndSisterAmount(Integer.parseInt(((JLabel)content).getText()));
+								
+							}else if(attributeName.equals("nativeLand")){
+								character.setNativeLand(((JLabel)content).getText());
+								
+							}else if(attributeName.equals("distinctSign")){
+								character.setNativeLand(((JLabel)content).getText());
+								
+							}else if(attributeName.contains("basic_") || attributeName.contains("current_")){
+								character.getBasicProfil().set(attributeName.substring(attributeName.length() - 2),
+												Integer.parseInt(((JLabel)content).getText()));
+							}
+					
+					
+				}	
 			}
 			content.setSize(content.getPreferredSize());
 			setSize(getPreferredSize());
@@ -485,6 +499,20 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			//do nothing			
+		}
+
+		@Override
+		public void focusGained(FocusEvent arg0) {
+			// do nothing
+			
+		}
+
+		@Override
+		public void focusLost(FocusEvent arg0) {
+			remove(content);
+			content = formerLabel;
+			add(content);
+			repaint();
 		}
 		
 	}
