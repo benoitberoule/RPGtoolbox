@@ -1,8 +1,10 @@
 /*This class represent the warhammer character sheet, it sum up every character details and each of them may be directly modify*/
 package gui.characterDisplay;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics2D;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
@@ -31,6 +33,8 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	private static final long serialVersionUID = 3637174654061296591L;
 	protected WarhammerCharacter character;
 	protected JLabel sheet;
+	protected int pageNumber;
+	protected static final int pageMax = 2;
 
 	/*Methods*/
 	public CharacterSheetWarhammer(JFrame _originalFrame, WarhammerCharacter cha) {
@@ -39,9 +43,19 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		ImageIcon characterSheetImage = new ImageIcon("./RPG/Warhammer/fichePerso.png");
 		sheet = new JLabel(characterSheetImage);
 		setPreferredSize(new Dimension(characterSheetImage.getIconWidth(),characterSheetImage.getIconHeight()));
+		pageNumber = 1;
 		createSheet();
 	}
-
+	/*draw the arrows need to change the page*/
+	protected void drawArrows()
+	{
+		ArrowLabel rightArrowLabel = new ArrowLabel();
+		rightArrowLabel.setBounds(sheet.getPreferredSize().width - 70, 20,
+									rightArrowLabel.getPreferredSize().width, rightArrowLabel.getPreferredSize().height);
+		
+		add(rightArrowLabel);
+	}
+	
 	@Override
 	protected void createSheet() {
 		setLayout(null);
@@ -292,7 +306,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		current_PDLabel.setSize(current_PDLabel.getPreferredSize());
 		add(current_PDLabel);
 
-		
+		drawArrows();
 		
 		sheet.setLocation(0, 0);
 		sheet.setSize(sheet.getPreferredSize());
@@ -325,6 +339,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 			 addMouseListener(this);		
 			 setSize(getPreferredSize());
 			 setBackground(new Color(0, 0, 0, 0));
+			 
 		}
 		
 		@Override
@@ -516,7 +531,16 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		}
 		
 	}
+	/*Class used to create the arrow label needed to change the pages*/
+	public class ArrowLabel extends JLabel
+	{
 
-	
+		private static final long serialVersionUID = -8754630727746339583L;
+
+		public ArrowLabel()
+		{
+			super(new ImageIcon("./img/arrow_right.png"));
+		}
+	}
 
 }
