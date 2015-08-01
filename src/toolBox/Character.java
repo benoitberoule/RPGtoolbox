@@ -11,8 +11,6 @@ public abstract class Character implements GUIParametrizable {
 	protected String relatedRPG = "";
 	protected boolean createdByGenericGUI;
 	
-	/*Methods*/
-	public abstract void saveAsXml();
 
 	
 	public void removeCategories()
