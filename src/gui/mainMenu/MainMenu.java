@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import toolBox.Module;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class MainMenu extends JFrame{
 
@@ -49,7 +51,7 @@ public class MainMenu extends JFrame{
 
 		}
 		
-		add(panel);
+		getContentPane().add(panel);
 		
 		repaint();
 	}

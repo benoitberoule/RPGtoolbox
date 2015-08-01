@@ -1,10 +1,8 @@
 /*This class represent the warhammer character sheet, it sum up every character details and each of them may be directly modify*/
 package gui.characterDisplay;
 
-import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics2D;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
