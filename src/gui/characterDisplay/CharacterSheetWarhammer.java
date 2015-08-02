@@ -52,7 +52,15 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 									rightArrowLabel.getPreferredSize().width, rightArrowLabel.getPreferredSize().height);
 		
 		add(rightArrowLabel);
+		
+		ArrowLabel leftArrowLabel = new ArrowLabel();
+		leftArrowLabel.switchLeft();
+		leftArrowLabel.setBounds(70 - leftArrowLabel.getPreferredSize().width, 20,
+									leftArrowLabel.getPreferredSize().width, leftArrowLabel.getPreferredSize().height);
+		
+		add(leftArrowLabel);
 	}
+	
 	
 	@Override
 	protected void createSheet() {
@@ -426,27 +434,30 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 			if((content instanceof JTextField  && !(content instanceof JFormattedTextField) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER) || ( content instanceof JFormattedTextField && ((JFormattedTextField)content).isEditValid() && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER ))
 			{
 				if(((JTextField)content).getText().equals("")){
-					JOptionPane.showMessageDialog(this, "Le champ ne peut Ãªtre vide","Champs vide", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(this, "Le champ ne peut être vide","Champs vide", JOptionPane.WARNING_MESSAGE);
 				}else{
 					
 					
 					remove(content);
 					
 					if (content instanceof JFormattedTextField )
-					{
-				
-						content = new JLabel(   (((JFormattedTextField)content).getValue()).toString()  );
-						
+					{			
+						content = new JLabel(   (((JFormattedTextField)content).getValue()).toString()  );						
 					}else if(content instanceof JTextField )
 					{
 						content = new JLabel(((JTextField)content).getText());
-						
 					}
 					add(content);
 	
 					
-					/*register the new attribute value (with a very disgusting switch)*/
-					if(attributeName.equals("name"))
+					/*register the new attribute value */
+					character.setAttribute(attributeName, ((JLabel)content).getText());
+					
+					/*TODO
+					 * ça marche po :(
+					 * */
+					
+					/*if(attributeName.equals("name"))
 							{
 								character.setName(((JLabel)content).getText());
 							}else if(attributeName.equals("race")){
@@ -491,7 +502,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 							}else if(attributeName.contains("basic_") || attributeName.contains("current_")){
 								character.getBasicProfil().set(attributeName.substring(attributeName.length() - 2),
 												Integer.parseInt(((JLabel)content).getText()));
-							}
+							}*/
 					
 					
 				}	
@@ -522,10 +533,13 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 
 		@Override
 		public void focusLost(FocusEvent arg0) {
+			if (!(content instanceof JLabel))
+			{
 			remove(content);
 			content = formerLabel;
 			add(content);
 			repaint();
+			}
 		}
 		
 	}
@@ -538,6 +552,16 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		public ArrowLabel()
 		{
 			super(new ImageIcon("./img/arrow_right.png"));
+		}
+		
+		public void  switchLeft()
+		{
+			setIcon(new ImageIcon("./img/arrow_left.png"));
+		}
+		
+		public void switchRight()
+		{
+			setIcon(new ImageIcon("./img/arrow_right.png"));
 		}
 	}
 

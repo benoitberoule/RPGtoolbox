@@ -11,8 +11,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import toolBox.Module;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
 
 public class MainMenu extends JFrame{
 
