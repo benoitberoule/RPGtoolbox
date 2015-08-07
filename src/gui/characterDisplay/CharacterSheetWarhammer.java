@@ -263,7 +263,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 					character.setAttribute(attributeName, ((JLabel)content).getText());
 					
 					/*if(attributeName.equals("name"))
-							{
+						{
 								character.setName(((JLabel)content).getText());
 							}else if(attributeName.equals("race")){
 								
