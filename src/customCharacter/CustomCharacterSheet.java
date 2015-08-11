@@ -110,12 +110,29 @@ public class CustomCharacterSheet extends Character {
 		
 	}
 	
+	//Getter
+	/**
+	 * 
+	 * @return
+	 */
+	public ArrayList<AbstractCategory> getContent(){
+		return content;
+	}
+	/**
+	 * 
+	 */
+	public AbstractCategory getElement(String name){
+		int index = find(name);
+		if (index!=-1) return content.get(index);
+		else return null;
+	}
+	
 	//Misc.
 	/* (non-Javadoc)
 	 * @see toolBox.GUIParametrizable#getGUIInputs(java.util.Hashtable)
 	 */
 	@Override
-	public void getGUIInputs(Hashtable<String, Object> ht) {
+ 	public void getGUIInputs(Hashtable<String, Object> ht) {
 		// TODO Auto-generated method stub
 
 	}
