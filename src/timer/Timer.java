@@ -3,10 +3,13 @@
 package timer;
 
 import java.awt.Font;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JLabel;
 
 
-public class Timer extends Thread {
+public class Timer extends Thread implements KeyListener{
 
 	/*Atributs*/
 	private TimerWindow fen;
@@ -16,12 +19,15 @@ public class Timer extends Thread {
 	private JLabel heuresLabel = new JLabel();
 	private JLabel deuxPoint1 = new JLabel(":");
 	private JLabel deuxPoint2 = new JLabel(":");
+	private boolean timer; //timer = true (timer)   timer = false (count down)
+	private boolean pause = false;
 
 	
 	
 	/*Methodes*/
-	public Timer(TimerWindow _fen,int _secondes)
+	public Timer(TimerWindow _fen,int _secondes, boolean _timer)
 	{
+		timer = _timer;
 		fen=_fen;
 			if(secondes<0)
 			{
@@ -44,7 +50,9 @@ public class Timer extends Thread {
 		fen.add(deuxPoint2);
 		fen.add(this.getSecondesLabel());
 		
-		/*On centre les Jlabel*/
+		fen.addKeyListener(this);
+		
+		/*labels centering*/
 		secondesLabel.setHorizontalAlignment(JLabel.CENTER);
 		minutesLabel.setHorizontalAlignment(JLabel.CENTER);
 		heuresLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -55,24 +63,32 @@ public class Timer extends Thread {
 	
 	public void run()
 	{
-		while(true)
+		boolean running = true;
+		while(running)
 		{
-
-			
-			
-			/*1 seconde d'attente*/
-			try {
-				sleep(1000);
-			} catch (InterruptedException e) {
+			if(!pause)
+			{				
+				if(secondes>=0)
+				{
+					if(timer)
+					{
+						secondes++; //timer
+					}else{
+						secondes--; //count down
+					}
+				secondesLabel.setText(String.valueOf(secondes%60));
+				minutesLabel.setText(String.valueOf((secondes/60)%60));
+				heuresLabel.setText(String.valueOf((secondes/3600)));
+				}else{
+					running = false;
+				}
 				
-			} 
-			
-			if(secondes>0)
-			{
-			secondes--;
-			secondesLabel.setText(String.valueOf(secondes%60));
-			minutesLabel.setText(String.valueOf((secondes/60)%60));
-			heuresLabel.setText(String.valueOf((secondes/3600)));
+				/*wait 1 seconds*/
+				try {
+					sleep(1000);
+				} catch (InterruptedException e) {
+					
+				} 
 			}
 		}
 	}
@@ -90,5 +106,27 @@ public class Timer extends Thread {
 	public JLabel getHeuresLabel()
 	{
 		return (heuresLabel);
+	}
+
+	
+	@Override
+	public void keyPressed(KeyEvent arg0) {
+		//do nothing
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		// do nothing
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent ke) {
+		if(((Character)(ke.getKeyChar())).hashCode() == KeyEvent.VK_SPACE)
+		{
+			pause = !pause;
+		}
+		
 	}
 }

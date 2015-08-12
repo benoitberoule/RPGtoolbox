@@ -11,8 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-
-public class TimerWindow extends JFrame{
+public class TimerWindow extends JFrame {
 
 	/**
 	 * 
@@ -68,6 +67,7 @@ public class TimerWindow extends JFrame{
 
 		return panel;
 	}
+
 	
 
 }
