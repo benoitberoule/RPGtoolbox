@@ -14,15 +14,12 @@ import java.text.NumberFormat;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFormattedTextField;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.NumberFormatter;
 
-import warhammerCharacter.Career;
-import warhammerCharacter.Race;
 import warhammerCharacter.WarhammerCharacter;
 
 public class CharacterSheetWarhammer extends CharacterSheet {
@@ -35,17 +32,22 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 	protected static final int pageMax = 2;
 
 	/*Methods*/
-	public CharacterSheetWarhammer(JFrame _originalFrame, WarhammerCharacter cha) {
+	public CharacterSheetWarhammer(CharacterSheetFrame _originalFrame, WarhammerCharacter cha) {
 		originalframe = _originalFrame;
+	
 		character = cha;
 		ImageIcon characterSheetImage = new ImageIcon("./RPG/Warhammer/fichePerso.png");
+		setSize(new Dimension(characterSheetImage.getIconWidth(),characterSheetImage.getIconHeight()));
+		setPreferredSize(getSize());
 		sheet = new JLabel(characterSheetImage);
 		setPreferredSize(new Dimension(characterSheetImage.getIconWidth(),characterSheetImage.getIconHeight()));
 		pageNumber = 1;
+		originalframe.setSheet(this);
 		createSheet();
 	}
+	
 	/*draw the arrows need to change the page*/
-	protected void drawArrows()
+/*	protected void drawArrows()
 	{
 		ArrowLabel rightArrowLabel = new ArrowLabel();
 		rightArrowLabel.setBounds(sheet.getPreferredSize().width - 70, 20,
@@ -59,7 +61,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 									leftArrowLabel.getPreferredSize().width, leftArrowLabel.getPreferredSize().height);
 		
 		add(leftArrowLabel);
-	}
+	}*/
 	
 	
 	@Override
@@ -115,7 +117,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		createEditableLabel("current_PF", 310, 470);
 		createEditableLabel("current_PD", 342, 470);
 		
-		drawArrows();
+		//drawArrows();
 		
 		sheet.setLocation(0, 0);
 		sheet.setSize(sheet.getPreferredSize());
@@ -349,7 +351,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		
 	}
 	/*Class used to create the arrow label needed to change the pages*/
-	public class ArrowLabel extends JLabel
+/*	public class ArrowLabel extends JLabel
 	{
 
 		private static final long serialVersionUID = -8754630727746339583L;
@@ -368,6 +370,6 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		{
 			setIcon(new ImageIcon("./img/arrow_right.png"));
 		}
-	}
+	}*/
 
 }
