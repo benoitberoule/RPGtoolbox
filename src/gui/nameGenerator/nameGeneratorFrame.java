@@ -33,7 +33,9 @@ public class nameGeneratorFrame extends JFrame {
 	private JComboBox<String> raceComboBox;
 	private JRadioButton rdbtnMasculin;
 	private JRadioButton rdbtnFeminin;
-	private JLabel generateNamesLabel;
+	private JLabel generateNamesLabel1;
+	private JLabel generateNamesLabel2;
+	private JLabel GenerateNamesLabel3;
 
 	/**
 	 * Launch the application.
@@ -104,8 +106,14 @@ public class nameGeneratorFrame extends JFrame {
 		JPanel namePanel = new JPanel();
 		contentPane.add(namePanel);
 		
-		generateNamesLabel = new JLabel("<html>Nom11111     Nom22222    Nom33333 <br>\nNom11111     Nom22222    Nom33333 <br>\nNom11111     Nom22222    Nom33333</html>");
-		namePanel.add(generateNamesLabel);
+		generateNamesLabel1 = new JLabel("");
+		namePanel.add(generateNamesLabel1);
+		
+		generateNamesLabel2 = new JLabel("Selectionez une race et appuyez sur \"Générer\"");
+		namePanel.add(generateNamesLabel2);
+		
+		GenerateNamesLabel3 = new JLabel("");
+		namePanel.add(GenerateNamesLabel3);
 		
 	}
 
@@ -149,19 +157,30 @@ public class nameGeneratorFrame extends JFrame {
 		
 		try {
 			nameGenerator.initiate();
-			String names = "<html>";
+			String names = "";
 			for(int i = 0 ; i < 3 ; ++i)
 			{
+				names = "<html>";
 				for(int j = 0 ; j < 3 ; ++j)
 				{
-					names += nameGenerator.generate() + "&nbsp; &nbsp; &nbsp;";
+					names += nameGenerator.generate() + "&nbsp;";
+					names += "<br>";
 				}
-				names += "<br>";
+				names += "</html>";
+				
+				if(i == 0)
+				{
+					generateNamesLabel1.setText(names);		
+				}else if(i == 1)
+				{
+					generateNamesLabel2.setText(names);
+				}else
+				{
+					GenerateNamesLabel3.setText(names);
+				}
 			}
 			
-			names += "</html>";
 			nameGenerator.close();
-			generateNamesLabel.setText(names);	
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
