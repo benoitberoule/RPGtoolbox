@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -125,6 +126,7 @@ public class nameGeneratorFrame extends JFrame {
 	{
 		
 		NameGenerator nameGenerator = null;
+		ArrayList<String> alreadyfoundName = new ArrayList<String>(); //to ensure a name is not founded twice
 		
 		/*Selection of the right name generator*/
 		
@@ -172,15 +174,26 @@ public class nameGeneratorFrame extends JFrame {
 		
 		
 		try {
-			nameGenerator.initiate();
 			String names = "";
+			String buffer = "";
+			
+			nameGenerator.initiate();
+			alreadyfoundName.add("");
+			
 			for(int i = 0 ; i < 3 ; ++i)
 			{
 				names = "<html>";
 				for(int j = 0 ; j < 3 ; ++j)
 				{
-					names += nameGenerator.generate() + "&nbsp;";
+					while (alreadyfoundName.contains(buffer))
+					{
+						buffer = nameGenerator.generate();
+					}
+					
+					names += buffer + "&nbsp;";
 					names += "<br>";
+					
+					alreadyfoundName.add(buffer);
 				}
 				names += "</html>";
 				
