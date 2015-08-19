@@ -22,11 +22,12 @@ public class CharacterSheetFrame extends JFrame{
 	
 	/*Methods*/
 	
-	
 	private void build()
 	{
+		/*TODO
+		 * regler les pb de resize de la frame*/
 		getContentPane().removeAll();
-		setSize(new Dimension(sheet.getPreferredSize().width + 10, 700));
+		//setSize(new Dimension(sheet.getPreferredSize().width + 10, 700));
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		
@@ -80,6 +81,7 @@ public class CharacterSheetFrame extends JFrame{
 	@Override
 	public void repaint()
 	{
+		System.out.println("toto");
 		build();
 		super.repaint();
 	}	
@@ -90,6 +92,7 @@ public class CharacterSheetFrame extends JFrame{
 	}
 	public void setSheet(CharacterSheet sheet) {
 		this.sheet = sheet;
+		setSize(new Dimension(sheet.getPreferredSize().width, 700));
 		build();
 	}
 

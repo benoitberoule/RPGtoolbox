@@ -50,9 +50,12 @@ public class ToolBox {
 		TimerModule tm = new TimerModule();
 		moduleList.add(tm);
 		
+		NameGeneratorModule ngm = new NameGeneratorModule();
+		moduleList.add(ngm);
+		
 		MainMenu mainMenu = new MainMenu(moduleList);
-		mainMenu.setVisible(true);
-
+		mainMenu.setVisible(true);		
+		
 	}
 
 }
