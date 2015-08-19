@@ -25,6 +25,7 @@ import nameGenerator.ElfMaleNameGenerator;
 import nameGenerator.HumanFemaleClassicalFantasyNameGenerator;
 import nameGenerator.HumanMaleClassicalFantasyNameGenerator;
 import nameGenerator.NameGenerator;
+import nameGenerator.PokemonNameGenerator;
 
 public class nameGeneratorFrame extends JFrame {
 
@@ -39,6 +40,7 @@ public class nameGeneratorFrame extends JFrame {
 	private JLabel generateNamesLabel1;
 	private JLabel generateNamesLabel2;
 	private JLabel GenerateNamesLabel3;
+	private ButtonGroup sexGroup;
 
 	/**
 	 * Launch the application.
@@ -80,7 +82,17 @@ public class nameGeneratorFrame extends JFrame {
 		raceComboBox = new JComboBox<String>();
 		raceComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Fantasy - Nain",
 															"Fantasy - Humain (classique)"
-															,"Fantasy - Elfe"}));
+															,"Fantasy - Elfe"
+															,"Pokémon"}));
+		raceComboBox.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+				disableSexChoiceOnRaceSelection();
+			}
+		});
+		
 		ComboPanel.add(raceComboBox);
 		
 		JPanel generationPanel = new JPanel();
@@ -103,7 +115,7 @@ public class nameGeneratorFrame extends JFrame {
 		rdbtnFeminin = new JRadioButton("Feminin");
 		generationPanel.add(rdbtnFeminin);
 		
-		ButtonGroup sexGroup = new ButtonGroup();
+		sexGroup = new ButtonGroup();
 		sexGroup.add(rdbtnMasculin);
 		sexGroup.add(rdbtnFeminin);
 		
@@ -121,14 +133,14 @@ public class nameGeneratorFrame extends JFrame {
 		
 	}
 
-	/*Action performed if the "generate" button is clicked, it display the name depending on user's choices*/
+	/*Action performed when the "generate" button is clicked, it display the name depending on user's choices*/
 	public void generateClick()
 	{
 		
 		NameGenerator nameGenerator = null;
-		ArrayList<String> alreadyfoundName = new ArrayList<String>(); //to ensure a name is not founded twice
+		ArrayList<String> alreadyfoundName = new ArrayList<String>(); //To ensure a name is not founded twice
 		
-		/*Selection of the right name generator*/
+		/*Selection of the name generator*/
 		
 		/*Dwarf*/
 		if(raceComboBox.getSelectedItem().equals("Fantasy - Nain"))
@@ -166,10 +178,17 @@ public class nameGeneratorFrame extends JFrame {
 			if(rdbtnMasculin.isSelected())
 			{
 				nameGenerator = new ElfMaleNameGenerator();
+			/*Female*/
 			}else if (rdbtnFeminin.isSelected())
 			{
 				nameGenerator = new ElfFemaleNameGenerator();
 			}
+		}
+		
+		/*Pokémon*/
+		if(raceComboBox.getSelectedItem().equals("Pokémon"))
+		{
+			nameGenerator = new PokemonNameGenerator();
 		}
 		
 		
@@ -212,6 +231,21 @@ public class nameGeneratorFrame extends JFrame {
 			nameGenerator.close();
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		
+	}
+	
+	/*The radio button Male/Female are enable or disable depending on the selected race*/
+	public void disableSexChoiceOnRaceSelection()
+	{
+		String race = (String) raceComboBox.getSelectedItem();
+		
+		if(race.equals("Pokémon")){
+			rdbtnFeminin.setEnabled(false);
+			rdbtnMasculin.setEnabled(false);
+		}else{
+			rdbtnFeminin.setEnabled(true);
+			rdbtnMasculin.setEnabled(true);			
 		}
 		
 	}
