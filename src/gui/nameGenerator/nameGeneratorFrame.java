@@ -19,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 
 import nameGenerator.DwarfFemaleNameGenerator;
 import nameGenerator.DwarfMaleNameGenerator;
+import nameGenerator.ElfFemaleNameGenerator;
+import nameGenerator.ElfMaleNameGenerator;
 import nameGenerator.HumanFemaleClassicalFantasyNameGenerator;
 import nameGenerator.HumanMaleClassicalFantasyNameGenerator;
 import nameGenerator.NameGenerator;
@@ -76,7 +78,8 @@ public class nameGeneratorFrame extends JFrame {
 		
 		raceComboBox = new JComboBox<String>();
 		raceComboBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Fantasy - Nain",
-															"Fantasy - Humain (classique)"}));
+															"Fantasy - Humain (classique)"
+															,"Fantasy - Elfe"}));
 		ComboPanel.add(raceComboBox);
 		
 		JPanel generationPanel = new JPanel();
@@ -152,6 +155,19 @@ public class nameGeneratorFrame extends JFrame {
 				nameGenerator = new HumanFemaleClassicalFantasyNameGenerator();
 			}
 			
+		}
+		
+		/*Elf*/
+		if(raceComboBox.getSelectedItem().equals("Fantasy - Elfe"))
+		{
+			/*Male*/
+			if(rdbtnMasculin.isSelected())
+			{
+				nameGenerator = new ElfMaleNameGenerator();
+			}else if (rdbtnFeminin.isSelected())
+			{
+				nameGenerator = new ElfFemaleNameGenerator();
+			}
 		}
 		
 		
