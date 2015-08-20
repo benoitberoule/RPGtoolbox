@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
+import nameGenerator.CityNameGenerator;
 import nameGenerator.DwarfFemaleNameGenerator;
 import nameGenerator.DwarfMaleNameGenerator;
 import nameGenerator.ElfFemaleNameGenerator;
@@ -87,6 +88,7 @@ public class nameGeneratorFrame extends JFrame {
 															"Fantasy - Humain (classique)"
 															,"Fantasy - Elfe"
 															,"Fantasy - Taverne"
+															,"Villes"
 															,"Pokémon"}));
 		raceComboBox.addActionListener(new ActionListener() {
 			
@@ -200,6 +202,11 @@ public class nameGeneratorFrame extends JFrame {
 			nameGenerator = new TavernNameGenerator();
 		}
 		
+		if(raceComboBox.getSelectedItem().equals("Villes"))
+		{
+			nameGenerator = new CityNameGenerator();
+		}
+		
 		try {
 			String names = "";
 			String buffer = "";
@@ -265,7 +272,9 @@ public class nameGeneratorFrame extends JFrame {
 	{
 		String race = (String) raceComboBox.getSelectedItem();
 		
-		if(race.equals("Pokémon") || race.equals("Fantasy - Taverne")){
+		if(race.equals("Pokémon") 
+				|| race.equals("Fantasy - Taverne")
+				|| race.equals("Villes")){
 			rdbtnFeminin.setEnabled(false);
 			rdbtnMasculin.setEnabled(false);
 		}else{
