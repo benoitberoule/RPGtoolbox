@@ -3,8 +3,10 @@
  * Modules to develop:
  * -Character creation (warhammer) - coding
  * -Smart maps
- * -dice roll generator
- * -name generator
+ * -dice roll generator - coding
+ * -name generator - coding
+ * -générateur de plan
+ * -générateur de batiment (genre un nom, une histoire, les habitants, le plan...)
  * -background generator
  * 
  * 

@@ -83,28 +83,31 @@ public class TavernMaleNameGenerator extends NameGenerator {
 			{
 				brPart1.readLine();
 			}
-			
-			name = brPart1.readLine();
+			String name1 = brPart1.readLine();
 			ipsPart1.getChannel().position(0);
 			
-			if(vowel.contains(name.substring(0, 1)))
+			if(vowel.contains(name1.substring(1, 2)))
 			{
-				name = "L'"+name.substring(0, name.indexOf("/"));
+				name = "L'"+name1.substring(1, name1.indexOf("/"));
 			}else{
-				name = "Le "+name.substring(0, name.indexOf("/"));
+				name = "Le "+name1.substring(1, name1.indexOf("/"));
 			}
 			
 			name += " ";
 			/*select the second part*/
-			rand = (int) (Math.random()*part2Amount);
-			for(int i = 0 ; i < rand ; ++i)
-			{
-				brPart2.readLine();
-			}
-			String temp = brPart2.readLine();
+			String name2;
+			do{
+				rand = (int) (Math.random()*part2Amount);
+				for(int i = 0 ; i < rand ; ++i)
+				{
+					brPart2.readLine();
+				}
+				name2 = brPart2.readLine();
+				ipsPart2.getChannel().position(0);
+				
+			}while(!(name1.substring(0, 1)).equals(name2.substring(0, 1)) || (name2.substring(0, 1)).equals("="));
 			
-			name += temp.substring(0,temp.indexOf("/"));
-			ipsPart2.getChannel().position(0);
+			name += name2.substring(1,name2.indexOf("/"));
 		}else if (r > 70 && r <= 80) //name"'s" (chez machin)
 		{
 			int rr = (int) (Math.random()*100);

@@ -237,6 +237,8 @@ public class nameGeneratorFrame extends JFrame {
 			}
 			repaint();
 			validate();
+			
+			/*to avoid too large label*/
 			int x = generateNamesLabel1.getY();
 			int y = generateNamesLabel2.getY();
 			int z = generateNamesLabel3.getY();
@@ -244,7 +246,12 @@ public class nameGeneratorFrame extends JFrame {
 			{
 				generateNamesLabel3.setText("");
 			}
-				
+			repaint();
+			validate();
+			if(x!=y)
+			{
+				generateNamesLabel2.setText("");
+			}
 				
 			nameGenerator.close();
 		} catch (IOException e) {
