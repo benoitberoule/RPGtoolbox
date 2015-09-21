@@ -16,7 +16,6 @@ public class RollDiceModule extends Module{
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-	
 		RollDice rd = new RollDice();
 		RollDiceFrame rdf = new RollDiceFrame();
 		rdf.setVisible(true);

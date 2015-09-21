@@ -8,12 +8,23 @@
  * -background generator
  * 
  * 
+ * Regles Ã  suivre
+ * - Coder en anglais
+ * - Respecter le design pattern Modele-Vue, sÃ©parer le modele et la GUI dans des packages Ã  part
+ * - Chaque classe doit commencer par une ou plusieurs lignes de commentaire dÃ©taillant son utilitÃ©
+ * - Convention de nommage
+ * 	* MaClasse
+ * 	* maVariableDuSwag
+ * 	* maFonctionDuSwag
+ * 	* MA_VARIABLE_GLOBALE
+ *  * monPackageDuSwag
+ * 
  * TODO
  * ->Tacaisse
- * -pemettre une generation aléatoire de perso
- * -coder la version non générique de la GUI
+ * -pemettre une generation alï¿½atoire de perso
+ * -coder la version non gï¿½nï¿½rique de la GUI
  * -faire une vrai fiche perso
- * -vérifier que la  création de perszo est bien générique*/
+ * -vï¿½rifier que la  crï¿½ation de perszo est bien gï¿½nï¿½rique*/
 package toolBox;
 
 import gui.mainMenu.MainMenu;
@@ -35,6 +46,12 @@ public class ToolBox {
 		
 		GeneralCharacterDisplayModule gcdm = new GeneralCharacterDisplayModule();
 		moduleList.add(gcdm);
+		
+		TimerModule tm = new TimerModule();
+		moduleList.add(tm);
+		
+		RollDiceModule rdm = new RollDiceModule();
+		moduleList.add(rdm);
 		
 		MainMenu mainMenu = new MainMenu(moduleList);
 		mainMenu.setVisible(true);

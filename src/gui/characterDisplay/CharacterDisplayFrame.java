@@ -197,7 +197,7 @@ public class CharacterDisplayFrame extends JFrame{
 		
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
-			JFrame characterSheetFrame = new JFrame();
+			CharacterSheetFrame characterSheetFrame = new CharacterSheetFrame();
 			if(characterFile.exists())
 			{
 				try {
@@ -210,9 +210,9 @@ public class CharacterDisplayFrame extends JFrame{
 						//JScrollPane scrollPane = new JScrollPane(csw);
 						//scrollPane.setBounds(0, 0, csw.getWidth(), csw.getHeight());
 						//scrollPane.setPreferredSize(csw.getPreferredSize());
-						characterSheetFrame.add(new JScrollPane(csw),BorderLayout.CENTER);
-						characterSheetFrame.setSize(new Dimension(characterSheetFrame.getPreferredSize().width + 10,
-																	characterSheetFrame.getPreferredSize().height));
+						//characterSheetFrame.add(new JScrollPane(csw),BorderLayout.CENTER);
+					//	characterSheetFrame.setSize(new Dimension(characterSheetFrame.getPreferredSize().width + 10,
+					//												characterSheetFrame.getPreferredSize().height));
 						characterSheetFrame.setVisible(true);
 						
 					} catch (Exception e) {
