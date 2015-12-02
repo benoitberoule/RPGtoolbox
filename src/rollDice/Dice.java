@@ -15,7 +15,7 @@ public class Dice {
 	public void rollDice(){
 		Random randomResult = new Random();
 		
-		result= randomResult.nextInt(numberOfFace-1)+1;
+		result= randomResult.nextInt(numberOfFace)+1;
 	}
 		
 }

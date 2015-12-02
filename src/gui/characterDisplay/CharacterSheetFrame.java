@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -21,25 +22,41 @@ public class CharacterSheetFrame extends JFrame{
 	
 	/*Methods*/
 	
-	
 	private void build()
 	{
-		//setLayout(null);
+		/*TODO
+		 * regler les pb de resize de la frame*/
+		getContentPane().removeAll();
+		//setSize(new Dimension(sheet.getPreferredSize().width + 10, 700));
 		
-		add(new JScrollPane(sheet),BorderLayout.CENTER);
-		setSize(new Dimension(sheet.getPreferredSize().width + 10,
-													sheet.getPreferredSize().height));
-		System.out.println(getSize());
+		JLayeredPane layeredPane = new JLayeredPane();
+		
+		/*Character sheet panel*/
+		JScrollPane scrollPane = new JScrollPane(sheet);
+		scrollPane.setPreferredSize(sheet.getPreferredSize());
+		scrollPane.setBounds(0,0,scrollPane.getPreferredSize().width,getHeight());	
+		layeredPane.add(scrollPane,new Integer(1));
+
+		/*arrow panel*/
+		JPanel arrowPane = drawArrows();
+		arrowPane.setBounds(0, 0, scrollPane.getPreferredSize().width, scrollPane.getPreferredSize().height);
+		layeredPane.add(arrowPane, new Integer(2));
+		arrowPane.setOpaque(false);
+		
+
+		layeredPane.setPreferredSize(getSize());		
+		//layeredPane.add(drawArrows(),new Integer(0));
 		
 		
-		drawArrows();
+		setContentPane(layeredPane);
+		//add(layeredPane,BorderLayout.CENTER);
 		
-		repaint();
+		layeredPane.revalidate();
 		validate();
 	}
 	
 	
-	protected void drawArrows()
+	protected JPanel drawArrows()
 	{
 		JPanel arrowPanel = new JPanel();
 		arrowPanel.setLayout(null);
@@ -56,8 +73,18 @@ public class CharacterSheetFrame extends JFrame{
 		
 		arrowPanel.add(leftArrowLabel);
 		arrowPanel.setBackground(new Color(0,0,0,0));
-		add(arrowPanel,BorderLayout.CENTER);
+		//add(arrowPanel,BorderLayout.CENTER);
+		
+		return arrowPanel;
 	}
+	
+	@Override
+	public void repaint()
+	{
+		System.out.println("toto");
+		build();
+		super.repaint();
+	}	
 	
 	/*Getters & setters*/
 	public CharacterSheet getSheet() {
@@ -65,6 +92,7 @@ public class CharacterSheetFrame extends JFrame{
 	}
 	public void setSheet(CharacterSheet sheet) {
 		this.sheet = sheet;
+		setSize(new Dimension(sheet.getPreferredSize().width, 700));
 		build();
 	}
 
