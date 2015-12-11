@@ -145,7 +145,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 		JComponent content;
 		JPanel originalPanel;
 		String attributeName;
-		JLabel formerLabel = new JLabel();;
+		JLabel formerLabel = new JLabel();
 		
 		/*Methods*/
 		 public EditableLabel( String _attributeName,JPanel _originalPanel , JComponent _content) {
@@ -213,7 +213,7 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 			content.repaint();
 			originalPanel.repaint();
 			originalframe.validate();
-			originalframe.repaint();
+           // originalframe.repaint();
 			
 		}
 
@@ -242,9 +242,10 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 
 		@Override
 		public void keyPressed(KeyEvent e) {
-			if((content instanceof JTextField  && !(content instanceof JFormattedTextField) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER) || ( content instanceof JFormattedTextField && ((JFormattedTextField)content).isEditValid() && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER ))
+			if((content instanceof JTextField  && !(content instanceof JFormattedTextField) && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER)
+					|| ( content instanceof JFormattedTextField && ((JFormattedTextField)content).isEditValid() && ((Character)(e.getKeyChar())).hashCode() == KeyEvent.VK_ENTER ))
 			{
-				if(((JTextField)content).getText().equals("")){
+                if(((JTextField)content).getText().equals("")){
 					JOptionPane.showMessageDialog(this, "Le champ ne peut �tre vide","Champs vide", JOptionPane.WARNING_MESSAGE);
 				}else{
 					
@@ -310,15 +311,19 @@ public class CharacterSheetWarhammer extends CharacterSheet {
 								character.getBasicProfil().set(attributeName.substring(attributeName.length() - 2),
 												Integer.parseInt(((JLabel)content).getText()));
 							}*/
-					
-					
+
+                    content.setSize(content.getPreferredSize());
+                    setSize(getPreferredSize());
+                    originalPanel.repaint();
+		        	originalframe.validate();
+		        	originalframe.repaint();
 				}	
 			}
 			content.setSize(content.getPreferredSize());
 			setSize(getPreferredSize());
 			originalPanel.repaint();
-			originalframe.validate();
-			originalframe.repaint();
+			/*originalframe.validate();
+			originalframe.repaint();*/
 		}
 
 		@Override

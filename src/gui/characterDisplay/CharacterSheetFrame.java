@@ -81,7 +81,6 @@ public class CharacterSheetFrame extends JFrame{
 	@Override
 	public void repaint()
 	{
-		System.out.println("toto");
 		build();
 		super.repaint();
 	}	
