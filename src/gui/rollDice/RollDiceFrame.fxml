@@ -4,15 +4,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.rollDice.RollDiceFrameController">
    <children>
       <MenuBar prefHeight="29.0" prefWidth="366.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
                   <MenuItem mnemonicParsing="false" text="Personalized Dice" />
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" text="Exit" />
             </items>
           </Menu>
           <Menu disable="true" mnemonicParsing="false" text="Edit" visible="false">
@@ -44,20 +43,20 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField text="0" GridPane.columnIndex="1" />
-                  <TextField text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <TextField text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="d4TextField" text="0" GridPane.columnIndex="1" />
+                  <TextField fx:id="d6TextField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="d8TextField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="d10TextField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="d12TextField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="d20TextField" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <TextField text="0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D4" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D6" GridPane.rowIndex="1" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D8" GridPane.rowIndex="2" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D10" GridPane.rowIndex="3" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D12" GridPane.rowIndex="4" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D20" GridPane.rowIndex="5" />
-                  <Label prefHeight="21.0" prefWidth="166.0" text="D100" GridPane.rowIndex="6" />
+                  <Label fx:id="d4Label" prefHeight="21.0" prefWidth="166.0" text="D4" />
+                  <Label fx:id="d6Label" prefHeight="21.0" prefWidth="166.0" text="D6" GridPane.rowIndex="1" />
+                  <Label fx:id="d8Label" prefHeight="21.0" prefWidth="166.0" text="D8" GridPane.rowIndex="2" />
+                  <Label fx:id="d10Label" prefHeight="21.0" prefWidth="166.0" text="D10" GridPane.rowIndex="3" />
+                  <Label fx:id="d12Label" prefHeight="21.0" prefWidth="166.0" text="D12" GridPane.rowIndex="4" />
+                  <Label fx:id="d20Label" prefHeight="21.0" prefWidth="166.0" text="D20" GridPane.rowIndex="5" />
+                  <Label fx:id="d100Label" prefHeight="21.0" prefWidth="166.0" text="D100" GridPane.rowIndex="6" />
                </children>
             </GridPane>
          </content>
