@@ -1,138 +1,71 @@
 package customCharacter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Category is a collection of abstractCategory.
- * It use for group field or more complex field.
- * @author Renaud
- *
+ * Created by 292925 on 12/02/2016.
  */
-public class Category extends AbstractCategory{
+public class Category {
+    private String name;
+    private List<AbstractField> datas;
 
-	private ArrayList<AbstractCategory> content;
-	
-	//Utility
-	/**
-	 * Find the index of the AbstractCategory element which have name. Return -1 if it do not find anything.
-	 * @param name
-	 * 		The name research.
-	 * @return index
-	 * 		index of the element search.
-	 */
-	private int find(String name){
-		int index = 0;
-		while(index < this.content.size()){
-			if (this.content.get(index).name.compareTo(name) == 0){
-				return index;
-			}
-			++index;
-		}
-		return -1;
-	}
-	
-	//Builder
-	/**
-	 * Build a void Category with its name.
-	 * @param name
-	 * 		NAme of the category.
-	 */
-	public Category(String name){
-		this.name = new String(name);
-		this.content = new ArrayList<AbstractCategory>();
-		
-		System.out.println("Build " + this.name);
-	}
-	/**
-	 * Build a Category with a Name and an ArrayList of AbstractCategory.
-	 * @param name
-	 * 		Name of the Category.
-	 * @param val
-	 * 		ArrayList of AbstractCategory. The future contents of the category.
-	 */
-	public Category(String name, ArrayList<AbstractCategory> val){
-		this.name = new String(name);
-		this.content = new ArrayList<AbstractCategory>(val);
-		
-		System.out.println("Build " + this.name + "Content : " + content);
-	}
-	/**
-	 * Build a Category with its and its contents.
-	 * The content is a variable number of AbstractCategory Object.
-	 * @param name
-	 * 		Name of the category.
-	 * @param elts
-	 * 		The elements to add.
-	 */
-	public Category(String name, AbstractCategory...  elts){
-		this.name = new String(name);
-		this.content = new ArrayList<AbstractCategory>();
-		for(AbstractCategory it : elts){
-			this.content.add(it);
-		}
-		
-		System.out.println("Name : " + this.name + " Content : " + content);
-	}
-	
-	//Getter & Setters
-	/**
-	 * Get the content of the category.
-	 * @return content
-	 * 		Content of the category.
-	 */
-	public ArrayList<AbstractCategory> getContent(){
-		return this.content;
-	}
-	/**
-	 * Set the content of the Category.
-	 * @param content
-	 * 		Content to set.
-	 */
-	public void setContent(ArrayList<AbstractCategory> content) {
-		this.content = content;
-	}
+    public Category(final String name) {
+        this.name = name;
+        datas = new ArrayList<AbstractField>();
+    }
 
-	//Manipulation
-	/**
-	 * Add a new element in the category
-	 * @param elt
-	 * 		Element to add.
-	 */
-	public void addElement(AbstractCategory elt){
-		content.add(elt);
-	}
-	/**
-	 * Remove an AbastractCategory element.
-	 * @param elt
-	 * 		Element to remove.
-	 */
-	public void deleteElement(AbstractCategory elt){
-		content.remove(elt);
-	}
-	/**
-	 * Delete the first AbstractCategory which have name as attribute.
-	 * @param name
-	 * 		Name of the AbstractCategory item to delete.
-	 * @return boolean
-	 * 		true if succeed. false if not.
-	 */
-	public boolean deleteElement(String name){
-		int index = find(name);
-		if (index != -1){
-			this.content.remove(index);
-			return true;
-		}
-		else return false;
-	}
+    public Category(final String name, final List<AbstractField> datas) {
+        this.name = name;
+        this.datas = datas;
+    }
 
-	
-	//Misc
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return "Category [content=" + content + ", name=" + name + "]";
-	}
-	
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    public List<AbstractField> getDatas() {
+        return datas;
+    }
+
+    public void setDatas(final List<AbstractField> datas) {
+        this.datas = datas;
+    }
+
+    public void addField(final AbstractField field){
+        datas.add(field);
+    }
+
+    public void addField(final String name, Object... values){
+        //Check the length of the ellipsis, if there is only one value, we check the type of this value.
+        if (values.length == 1){
+            //If the value is a String, we add a StringField.
+            if (values[0].getClass() == String.class)
+                addField(new StringField(name, (String) values[0]));
+            else if (values[0].getClass() == Integer.class)
+                addField(new IntegerField(name, (Integer) values[0]));
+            else
+                throw new UnsupportedClassVersionError(values.getClass().toString() + " is unsupported by AbstractField.");
+        } else if (values.length == 3) {
+            for (Object value : values) {
+                if (value.getClass() != Integer.class)
+                    throw new UnsupportedClassVersionError(values.getClass().toString() + " is unsupported by AbstractField.");
+            }
+            addField(new LimitedIntegerField(name, (Integer) values[0], (Integer) values[1], (Integer) values[2]));
+        } else
+            throw new ArrayIndexOutOfBoundsException(values.length + " is an unsupported number of parameter");
+
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "name='" + name + '\'' +
+                ", datas=" + datas +
+                '}';
+    }
 }

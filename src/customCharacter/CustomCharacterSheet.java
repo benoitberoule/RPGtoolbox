@@ -3,10 +3,10 @@
  */
 package customCharacter;
 
+import toolBox.Character;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
-
-import toolBox.Character;
 
 
 /**
@@ -44,10 +44,10 @@ public class CustomCharacterSheet extends Character {
 	/**
 	 * Add a category to this sheet.
 	 * @param name
-	 * 		Name of the Category to add.
+	 * 		Name of the DeprecatedCategory to add.
 	 */
 	public void addCategory(String name){
-		content.add(new Category(name));
+		content.add(new DeprecatedCategory(name));
 	}
 	/**
 	 * Add a String Field to the sheet.
@@ -72,11 +72,11 @@ public class CustomCharacterSheet extends Character {
 	/**
 	 * Delete a category.
 	 * @param c
-	 * 		Category to delete.
+	 * 		DeprecatedCategory to delete.
 	 * @return 
 	 * 		true if succed, false if not.
 	 */
-	public boolean deleteCategory(Category c){
+	public boolean deleteCategory(DeprecatedCategory c){
 		if(content.remove(c)) return true;
 		else return false;
 	}

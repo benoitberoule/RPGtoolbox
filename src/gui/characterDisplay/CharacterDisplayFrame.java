@@ -2,8 +2,11 @@
  * in the file RPG/Characters*/
 package gui.characterDisplay;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+import toolBox.Module;
+import warhammerCharacter.WarhammerCharacter;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -12,15 +15,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
-
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-
-import toolBox.Module;
-import warhammerCharacter.WarhammerCharacter;
 
 public class CharacterDisplayFrame extends JFrame{
 
@@ -250,7 +244,7 @@ public class CharacterDisplayFrame extends JFrame{
 		
 	}
 	
-	/*the listener which refresh the displayed character depending on the selected RPG and Category*/
+	/*the listener which refresh the displayed character depending on the selected RPG and DeprecatedCategory*/
 	public class RefreshListener implements ActionListener
 	{
 		private CharacterDisplayFrame cdf;
